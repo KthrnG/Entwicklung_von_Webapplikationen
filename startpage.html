@@ -7,17 +7,51 @@
     </head>
     <body>
 
-      <!--<div class="header">
-        <div class="transbox">
-          <h1> Webseitenname </h1>
-        </div>
-      </div>-->
+
       <div class="background">
         <div class="transbox">
           <h1> Webseitenname </h1>
         </div>
       </div>
+      <!--<div class="navbar">
+        <a href="#register"> Registrieren</a>
+        <a href="#login"> Login</a>
+      </div>-->
+      <nav role="navigation">
+        <div id="menuToggle">
+    <!--
+    A fake / hidden checkbox is used as click reciever,
+    so you can use the :checked selector on it.
+    -->
+    <input type="checkbox" />
 
+    <!--
+    Some spans to act as a hamburger.
+
+    They are acting like a real hamburger,
+    not that McDonalds stuff.
+    -->
+    <span></span>
+    <span></span>
+    <span></span>
+
+    <!--
+    Too bad the menu has to be inside of the button
+    but hey, it's pure CSS magic.
+    -->
+    <ul id="menu">
+      <a href="#"><li>About</li></a>
+      <a href="#"><li>Suche</li></a>
+      <a href="#"><li>Kräuter A - Z</li></a>
+      <a href="#"><li>Impressum</li></a>
+
+    </ul>
+  </div>
+</nav>
+<div class="navbar">
+  <a href="#register"> Registrieren</a>
+  <a href="#login"> Login</a>
+</div>
 
 
     </body>
