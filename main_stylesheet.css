@@ -4,6 +4,11 @@ body, html {
   font-family: Helvetica;
 }
 
+h1 {
+  text-align: center;
+  margin-top: 5%;
+}
+
 .background {
   background: url(img/header.png);
   border: 0.1px solid black;
@@ -59,6 +64,44 @@ body, html {
   opacity: 0.6;
   filter: alpha(opacity=60); /* For IE8 and earlier */
   color: black;
+}
+.textboxes{
+  width: 85%;
+  /*height: 100px;
+  background-color: black;*/
+  margin: 60px 100px;
+  display: block;
+}
+.box1 {
+  width: 30%;
+  height: 100%;
+  background-color: #4e906c;
+  border: green 1px solid;
+  float: left;
+}
+
+.box2 {
+  width: 30%;
+  height: 100%;
+  background-color: #4e906c;
+  border: green 1px solid;
+  float: left;
+  margin-left: 55px;
+  margin-right: 55px;
+
+}
+
+.box3 {
+  width: 30%;
+  height: 100%;
+  background-color: #4e906c;
+  border: green 1px solid;
+  float:right;
+}
+.textboxes p{
+  color: white;
+  margin: 60px 40px;
+  text-align: justify;
 }
 
 
