@@ -16,29 +16,58 @@ h1 {
   background-repeat: no-repeat;
   background-size: cover;
   height: 30%;
-
-
 }
 
-/* Transparent Box on image*/
-.transbox {
-  margin: 1.5% 30%;
-  background-color: #ffffff;
-  border: 1px solid white;
-  height: 80%;
-  min-width: 200px;
-  opacity: 0.6;
-  filter: alpha(opacity=60); /* For IE8 and earlier */
-}
 /* text on transparant box */
-.transbox h1 {
-  margin: 15% 5%;
+h1.ontop {
+  position:relative;
   display: block;
   font-size: 3.7vw;
   text-align: center;
   font-weight: bold;
   color: #000000;
+  z-index: 1000;
+}
 
+
+/* Herb Header image*/
+.herbheader {
+  background: url(img/herbheader.png);
+  border: 0.1px solid white;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 30%;
+  margin-top: 450px;
+  margin-bottom: 70px;
+}
+
+/* Transparent Box on image*/
+.background .transbox {
+  margin-top: -10%;
+  margin-left: auto;
+  margin-right: auto;
+  position:relative;
+  background-color: #ffffff;
+  border: 1px solid white;
+  height: 80%;
+  min-width: 200px;
+  max-width: 40%;
+  opacity: 0.6;
+  filter: alpha(opacity=60); /* For IE8 and earlier */
+}
+/* Transparent Box on image*/
+.herbheader .transbox {
+  margin-top: -10%;
+  margin-left: auto;
+  margin-right: auto;
+  position:relative;
+  background-color: #ffffff;
+  border: 1px solid white;
+  height: 80%;
+  min-width: 200px;
+  max-width: 40%;
+  opacity: 0.6;
+  filter: alpha(opacity=60); /* For IE8 and earlier */
 }
 /*
 ---------------------------------
@@ -130,6 +159,8 @@ Everything for the textboxes
 ---------------------------------
 ---------------------------------
 Everything for the hamburger menu
+inspired by:
+https://codepen.io/erikterwan/pen/EVzeRP
 ---------------------------------
 ---------------------------------
 ---------------------------------
