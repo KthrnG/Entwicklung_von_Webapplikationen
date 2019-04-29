@@ -105,8 +105,10 @@ h1.ontop {
   padding: 15px 25px;
   margin: 0px 5px 0px 5px;
   text-decoration: none;
+}
 
-
+li.active{
+  color: #0a632d;
 }
 
 .navbar a:hover {
@@ -220,7 +222,7 @@ Everything for the textboxes
 
 .footerbox {
   width:30%;
-  margin: 25px 100px 0px 100px;
+  margin: 40px 100px 0px 100px;
   list-style: none;
 }
 
