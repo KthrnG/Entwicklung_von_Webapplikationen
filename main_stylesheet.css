@@ -23,6 +23,7 @@ footer {
 /* Header image*/
 .background {
   background: url(img/header.png);
+  top: 0;
   border: 0.1px solid black;
   background-repeat: no-repeat;
   background-size: cover;
