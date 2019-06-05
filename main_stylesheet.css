@@ -254,6 +254,23 @@ Everything for the textboxes
     top: 50px;
 }
 
+.steckbrief {
+    position: relative;
+    margin-left: 450px;
+    top: -300px;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 25px;
+    letter-spacing: 0.5px;
+}
+
+.beschreibung {
+    position: relative;
+    margin-left: 450px;
+    top: -300px;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 25px;
+    letter-spacing: 0.5px;
+}
 
 /* Main container */
 .overlay-image {
