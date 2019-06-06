@@ -258,11 +258,60 @@ Everything for the textboxes
     position: relative;
     margin-left: 450px;
     top: -300px;
-    font-family: Arial, Helvetica, sans-serif;
     line-height: 25px;
     letter-spacing: 0.5px;
 }
 
+.steckbrief table {
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+.steckbrief table caption {
+    text-align: left;
+    padding: 8px 5px;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+}
+
+.steckbrief table tbody tr:nth-of-type(2n+1) {
+    background: rgb(240, 240, 240);
+}
+
+.steckbrief table tbody tr td {
+    color: rgb(0, 0, 0);
+    padding: 8px;
+    vertical-align: top;
+    border: none;
+    font-size: 14px;
+    line-height: 18px;
+    text-align: left;
+}
+
+.beschreibung {
+    position: relative;
+    margin-left: 450px;
+    margin-right: 270px;
+    top: -300px;
+    line-height: 25px;
+    letter-spacing: 0.5px;
+}
+
+.beschreibung table caption {
+    text-align: left;
+    padding: 8px 5px;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+}
+
+.beschreibung table tbody tr td {
+    color: rgb(0, 0, 0);
+    font-size: 14px;
+    line-height: 20px;
+    text-align: left;
+}
+
+/*
 .beschreibung {
     position: relative;
     margin-left: 450px;
@@ -271,6 +320,7 @@ Everything for the textboxes
     line-height: 25px;
     letter-spacing: 0.5px;
 }
+*/
 
 /* Main container */
 .overlay-image {
