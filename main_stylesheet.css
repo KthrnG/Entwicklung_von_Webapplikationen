@@ -127,8 +127,6 @@ li.active {
 
 .navbar .search-container {
     float: right;
-
-
 }
 
 .navbar input[type=text] {
@@ -310,17 +308,6 @@ Everything for the textboxes
     line-height: 20px;
     text-align: left;
 }
-
-/*
-.beschreibung {
-    position: relative;
-    margin-left: 450px;
-    top: -300px;
-    font-family: Arial, Helvetica, sans-serif;
-    line-height: 25px;
-    letter-spacing: 0.5px;
-}
-*/
 
 /* Main container */
 .overlay-image {
@@ -533,4 +520,26 @@ https://codepen.io/erikterwan/pen/EVzeRP
  */
 #menuToggle input:checked ~ ul {
     transform: none;
+}
+
+
+/*
+---------------------------------
+---------------------------------
+---------------------------------
+about.html
+---------------------------------
+---------------------------------
+---------------------------------
+ */
+
+.about table {
+    padding: 100px;
+    border: 5px;
+}
+
+.about table tbody tr td {
+    font-family: sans-serif;
+    font-size: 14px;
+    line-height: 8px;
 }
