@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Erstellungszeit: 05. Jun 2019 um 08:32
+-- Erstellungszeit: 06. Jun 2019 um 13:58
 -- Server-Version: 5.7.25
 -- PHP-Version: 7.3.1
 
@@ -67,8 +67,6 @@ INSERT INTO `datei` (`dname`, `mname`, `type`, `adr`) VALUES
 
 CREATE TABLE `medium` (
   `mname` varchar(30) COLLATE utf8_bin NOT NULL,
-  `season` int(11) DEFAULT NULL,
-  `place` int(11) DEFAULT NULL,
   `descrm` varchar(100) COLLATE utf8_bin DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
@@ -76,8 +74,47 @@ CREATE TABLE `medium` (
 -- Daten für Tabelle `medium`
 --
 
-INSERT INTO `medium` (`mname`, `season`, `place`, `descrm`) VALUES
-('Basilikum', 2, 2, 'Das ist Basilikum');
+INSERT INTO `medium` (`mname`, `descrm`) VALUES
+('Basilikum', 'Das ist Basilikum'),
+('Dill', 'Das ist Dill'),
+('Koriander', 'Das ist Koriander'),
+('Kresse', 'Das ist Kresse'),
+('Minze', 'Das ist Minze'),
+('Petersilie', 'Das ist Petersilie'),
+('Rosmarin', 'Das ist Rosmarin'),
+('Salbei', 'Das ist Salbei'),
+('Schnittlauch', 'Das ist Schnittlauch'),
+('Thymian', 'Das ist Thymian');
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `months`
+--
+
+CREATE TABLE `months` (
+  `idm` int(11) NOT NULL,
+  `month` varchar(30) COLLATE utf8_bin DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Daten für Tabelle `months`
+--
+
+INSERT INTO `months` (`idm`, `month`) VALUES
+(1, 'Januar'),
+(2, 'Februar'),
+(3, 'März'),
+(4, 'April'),
+(5, 'Mai'),
+(6, 'Juni'),
+(7, 'Juli'),
+(8, 'August'),
+(9, 'September'),
+(10, 'Oktober'),
+(11, 'November'),
+(12, 'Dezember'),
+(13, 'ganzjährig');
 
 -- --------------------------------------------------------
 
@@ -99,6 +136,54 @@ INSERT INTO `place` (`idp`, `descrp`) VALUES
 (2, 'Halbschatten'),
 (3, 'Schatten'),
 (4, 'egal');
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `placetime`
+--
+
+CREATE TABLE `placetime` (
+  `mname` varchar(30) COLLATE utf8_bin DEFAULT NULL,
+  `place` int(11) DEFAULT NULL,
+  `month` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Daten für Tabelle `placetime`
+--
+
+INSERT INTO `placetime` (`mname`, `place`, `month`) VALUES
+('Basilikum', 1, 3),
+('Basilikum', 1, 4),
+('Dill', 1, 4),
+('Dill', NULL, 5),
+('Koriander', 1, 3),
+('Koriander', 2, 4),
+('Koriander', NULL, 5),
+('Koriander', NULL, 6),
+('Kresse', 4, 13),
+('Minze', 2, 3),
+('Minze', NULL, 4),
+('Petersilie', 1, 10),
+('Petersilie', 2, 11),
+('Petersilie', NULL, 12),
+('Petersilie', NULL, 1),
+('Petersilie', NULL, 2),
+('Petersilie', NULL, 3),
+('Petersilie', NULL, 4),
+('Petersilie', NULL, 5),
+('Rosmarin', 1, 3),
+('Rosmarin', NULL, 4),
+('Salbei', 1, 2),
+('Salbei', NULL, 3),
+('Salbei', NULL, 4),
+('Salbei', NULL, 5),
+('Schnittlauch', 1, 2),
+('Schnittlauch', 2, 3),
+('Thymian', 1, 4),
+('Thymian', NULL, 5),
+('Thymian', NULL, 6);
 
 -- --------------------------------------------------------
 
@@ -183,15 +268,27 @@ ALTER TABLE `datei`
 -- Indizes für die Tabelle `medium`
 --
 ALTER TABLE `medium`
-  ADD PRIMARY KEY (`mname`),
-  ADD KEY `season` (`season`),
-  ADD KEY `place` (`place`);
+  ADD PRIMARY KEY (`mname`);
+
+--
+-- Indizes für die Tabelle `months`
+--
+ALTER TABLE `months`
+  ADD PRIMARY KEY (`idm`);
 
 --
 -- Indizes für die Tabelle `place`
 --
 ALTER TABLE `place`
   ADD PRIMARY KEY (`idp`);
+
+--
+-- Indizes für die Tabelle `placetime`
+--
+ALTER TABLE `placetime`
+  ADD KEY `mname` (`mname`),
+  ADD KEY `place` (`place`),
+  ADD KEY `month` (`month`);
 
 --
 -- Indizes für die Tabelle `season`
@@ -231,11 +328,12 @@ ALTER TABLE `datei`
   ADD CONSTRAINT `datei_ibfk_1` FOREIGN KEY (`mname`) REFERENCES `medium` (`mname`);
 
 --
--- Constraints der Tabelle `medium`
+-- Constraints der Tabelle `placetime`
 --
-ALTER TABLE `medium`
-  ADD CONSTRAINT `medium_ibfk_1` FOREIGN KEY (`season`) REFERENCES `season` (`ids`),
-  ADD CONSTRAINT `medium_ibfk_2` FOREIGN KEY (`place`) REFERENCES `place` (`idp`);
+ALTER TABLE `placetime`
+  ADD CONSTRAINT `placetime_ibfk_1` FOREIGN KEY (`mname`) REFERENCES `medium` (`mname`),
+  ADD CONSTRAINT `placetime_ibfk_2` FOREIGN KEY (`place`) REFERENCES `place` (`idp`),
+  ADD CONSTRAINT `placetime_ibfk_3` FOREIGN KEY (`month`) REFERENCES `months` (`idm`);
 
 --
 -- Constraints der Tabelle `wunschliste`
