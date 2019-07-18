@@ -8,6 +8,7 @@ html {
 h1 {
     text-align: center;
     margin-top: 5%;
+
 }
 
 footer {
@@ -113,6 +114,27 @@ h1.ontop {
     margin: 0px 5px 0px 5px;
     text-decoration: none;
 }
+.navbar button {
+    float: right;
+    display: block;
+    background-color: #0a632d;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    border: none;
+    padding: 15px 25px;
+    margin: 0px 5px 0px 5px;
+    text-decoration: none;
+}
+
+
+.navbar button:hover {
+  background-color: white;
+  opacity: 0.6;
+  filter: alpha(opacity=60);
+  color: black;
+}
+
 
 li.active {
     color: #0a632d;
@@ -157,6 +179,30 @@ li.active {
     padding: 5px 0px;
 
 }
+
+#login {
+  width:500px;
+  padding: 10px;
+  float: right;
+  background-color: #0a632d;
+  color: white;
+  display: none;
+  flex-direction: row;
+  z-index: 1000;
+  }
+
+#el1{
+  margin-left: 20px;
+}
+#login button {
+  border: 3px solid white;
+  width: 100px;
+  float:right;
+  height: 40px;
+  padding: 5px 5px;
+  margin: 28px 0px 10px 35px;
+}
+
 
 
 /*
@@ -648,4 +694,36 @@ about.html
     font-size: 15x;
     color: #fff;
     line-height: 20px;
+}
+
+/*
+---------------------------------
+---------------------------------
+---------------------------------
+register.php
+---------------------------------
+---------------------------------
+---------------------------------
+ */
+form button {
+    /*float: right;*/
+    display: block;
+    background-color: #0a632d;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    border: none;
+    padding: 15px 25px;
+    margin: 0px 5px 0px 5px;
+    text-decoration: none;
+    width: 200px;
+    border: 3px solid #0a632d;
+}
+
+form button:hover {
+  background-color: white;
+  /*opacity: 0.6;*/
+  /*filter: alpha(opacity=60);*/
+  color: #0a632d;
+  border: 3px solid #0a632d;
 }

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Erstellungszeit: 06. Jun 2019 um 13:58
+-- Erstellungszeit: 18. Jul 2019 um 11:20
 -- Server-Version: 5.7.25
 -- PHP-Version: 7.3.1
 
@@ -67,24 +67,25 @@ INSERT INTO `datei` (`dname`, `mname`, `type`, `adr`) VALUES
 
 CREATE TABLE `medium` (
   `mname` varchar(30) COLLATE utf8_bin NOT NULL,
-  `descrm` varchar(100) COLLATE utf8_bin DEFAULT NULL
+  `descrm` varchar(100) COLLATE utf8_bin DEFAULT NULL,
+  `link` varchar(50) COLLATE utf8_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Daten für Tabelle `medium`
 --
 
-INSERT INTO `medium` (`mname`, `descrm`) VALUES
-('Basilikum', 'Das ist Basilikum'),
-('Dill', 'Das ist Dill'),
-('Koriander', 'Das ist Koriander'),
-('Kresse', 'Das ist Kresse'),
-('Minze', 'Das ist Minze'),
-('Petersilie', 'Das ist Petersilie'),
-('Rosmarin', 'Das ist Rosmarin'),
-('Salbei', 'Das ist Salbei'),
-('Schnittlauch', 'Das ist Schnittlauch'),
-('Thymian', 'Das ist Thymian');
+INSERT INTO `medium` (`mname`, `descrm`, `link`) VALUES
+('Basilikum', 'Das ist Basilikum', 'basilikum.html'),
+('Dill', 'Das ist Dill', 'dill.html'),
+('Koriander', 'Das ist Koriander', 'koriander.html'),
+('Kresse', 'Das ist Kresse', 'kresse.html'),
+('Minze', 'Das ist Minze', 'minze.html'),
+('Petersilie', 'Das ist Petersilie', 'petersilie.html'),
+('Rosmarin', 'Das ist Rosmarin', 'rosmarin.html'),
+('Salbei', 'Das ist Salbei', 'salbei.html'),
+('Schnittlauch', 'Das ist Schnittlauch', 'schnittlauch.html'),
+('Thymian', 'Das ist Thymian', 'thymian.html');
 
 -- --------------------------------------------------------
 
@@ -188,28 +189,6 @@ INSERT INTO `placetime` (`mname`, `place`, `month`) VALUES
 -- --------------------------------------------------------
 
 --
--- Tabellenstruktur für Tabelle `season`
---
-
-CREATE TABLE `season` (
-  `ids` int(11) NOT NULL,
-  `descrS` varchar(20) COLLATE utf8_bin DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
---
--- Daten für Tabelle `season`
---
-
-INSERT INTO `season` (`ids`, `descrS`) VALUES
-(1, 'Frühling'),
-(2, 'Sommer'),
-(3, 'Herbst'),
-(4, 'Winter'),
-(5, 'Ganzjährig');
-
--- --------------------------------------------------------
-
---
 -- Tabellenstruktur für Tabelle `users`
 --
 
@@ -225,7 +204,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`uname`, `email`, `passwort`, `userrights`) VALUES
-('MaxM', 'max@muster.de', '123abc', 1);
+('ILoveWAPP', 'wapp@test.de', 'wappwapp', NULL),
+('MaxM', 'max@muster.de', '123abc', 1),
+('Tester', 'test@test.de', 'test', NULL);
 
 -- --------------------------------------------------------
 
@@ -289,12 +270,6 @@ ALTER TABLE `placetime`
   ADD KEY `mname` (`mname`),
   ADD KEY `place` (`place`),
   ADD KEY `month` (`month`);
-
---
--- Indizes für die Tabelle `season`
---
-ALTER TABLE `season`
-  ADD PRIMARY KEY (`ids`);
 
 --
 -- Indizes für die Tabelle `users`

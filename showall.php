@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -73,15 +74,37 @@
       <button type="button"  value="Check" onclick="window.location = 'login.php'">Login</button>
 
     </div>
-    <h1> Suche
-      <div class= "search">
-        <input>
-      </div>
+    <h1> Alle Kräuter
     </h1>
     <div align="center">
-    <form method="post" action="showall.php">
-        <button type="submit" class="button" name="select" >Alle anzeigen </button>
-    </form>
+      <ul style="list-style-type: none; text-align:left; margin-left: 43%;">
+      <?php
+      include ("connect.php");
+
+      if (isset($_POST['select'])) {
+
+
+
+            $sql = "SELECT mname, link FROM medium";
+            $result = mysqli_query($conn, $sql);
+
+            if (mysqli_num_rows($result) > 0) {
+                // output data of each row
+                while($row = mysqli_fetch_assoc($result)) {
+                    echo "<li><a href ='".$row["link"]."'>" . $row["mname"]. "</a></li> <br> <br>";
+                }
+            } else {
+                echo "0 results";
+            }
+              //echo "The select function is called.";
+              //exit;
+          }
+
+
+
+
+      ?>
+    </ul>
   </div>
 
 
