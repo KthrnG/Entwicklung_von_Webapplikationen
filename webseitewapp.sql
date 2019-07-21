@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Erstellungszeit: 18. Jul 2019 um 11:20
+-- Erstellungszeit: 21. Jul 2019 um 13:51
 -- Server-Version: 5.7.25
 -- PHP-Version: 7.3.1
 
@@ -57,7 +57,16 @@ CREATE TABLE `datei` (
 --
 
 INSERT INTO `datei` (`dname`, `mname`, `type`, `adr`) VALUES
-('ImgBasil', 'Basilikum', 'img', 'https://www.lebensbaum.com/files/styles/greige_image_476x476/public/images/greiges/basilikum1.jpg?itok=SLCzXT8r');
+('ChiveImg', 'Schnittlauch', 'img', 'img/chive.jpg'),
+('CilantroImg', 'Koriander', 'img', 'img/cilantro.jpg'),
+('DillImg', 'Dill', 'img', 'img/dill.jpg'),
+('ImgBasil', 'Basilikum', 'img', 'img/basil.jpg'),
+('KresseImg', 'Kresse', 'img', 'img/kresse.jpg'),
+('MintImg', 'Minze', 'img', 'img/mint.png'),
+('ParsleyImg', 'Petersilie', 'img', 'img/parsley.jpg'),
+('RosmaryImg', 'Rosmarin', 'img', 'img/rosmary.jpg'),
+('SageImg', 'Salbei', 'img', 'img/sage.jpg'),
+('ThymeImg', 'Thymian', 'img', 'img/thyme.jpg');
 
 -- --------------------------------------------------------
 
@@ -103,6 +112,7 @@ CREATE TABLE `months` (
 --
 
 INSERT INTO `months` (`idm`, `month`) VALUES
+(0, ' '),
 (1, 'Januar'),
 (2, 'Februar'),
 (3, 'März'),
@@ -115,6 +125,37 @@ INSERT INTO `months` (`idm`, `month`) VALUES
 (10, 'Oktober'),
 (11, 'November'),
 (12, 'Dezember'),
+(13, 'ganzjährig');
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `months2`
+--
+
+CREATE TABLE `months2` (
+  `idm` int(11) NOT NULL,
+  `month2` varchar(30) COLLATE utf8_bin DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Daten für Tabelle `months2`
+--
+
+INSERT INTO `months2` (`idm`, `month2`) VALUES
+(0, ' '),
+(1, '- Januar'),
+(2, '- Februar'),
+(3, '- März'),
+(4, '- April'),
+(5, '- Mai'),
+(6, '- Juni'),
+(7, '- Juli'),
+(8, '- August'),
+(9, '- September'),
+(10, '- Oktober'),
+(11, '- November'),
+(12, '- Dezember'),
 (13, 'ganzjährig');
 
 -- --------------------------------------------------------
@@ -133,6 +174,7 @@ CREATE TABLE `place` (
 --
 
 INSERT INTO `place` (`idp`, `descrp`) VALUES
+(0, ''),
 (1, 'Sonne'),
 (2, 'Halbschatten'),
 (3, 'Schatten'),
@@ -141,50 +183,54 @@ INSERT INTO `place` (`idp`, `descrp`) VALUES
 -- --------------------------------------------------------
 
 --
--- Tabellenstruktur für Tabelle `placetime`
+-- Tabellenstruktur für Tabelle `place2`
 --
 
-CREATE TABLE `placetime` (
-  `mname` varchar(30) COLLATE utf8_bin DEFAULT NULL,
-  `place` int(11) DEFAULT NULL,
-  `month` int(11) DEFAULT NULL
+CREATE TABLE `place2` (
+  `idp` int(11) NOT NULL,
+  `descrp2` varchar(20) COLLATE utf8_bin DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Daten für Tabelle `placetime`
+-- Daten für Tabelle `place2`
 --
 
-INSERT INTO `placetime` (`mname`, `place`, `month`) VALUES
-('Basilikum', 1, 3),
-('Basilikum', 1, 4),
-('Dill', 1, 4),
-('Dill', NULL, 5),
-('Koriander', 1, 3),
-('Koriander', 2, 4),
-('Koriander', NULL, 5),
-('Koriander', NULL, 6),
-('Kresse', 4, 13),
-('Minze', 2, 3),
-('Minze', NULL, 4),
-('Petersilie', 1, 10),
-('Petersilie', 2, 11),
-('Petersilie', NULL, 12),
-('Petersilie', NULL, 1),
-('Petersilie', NULL, 2),
-('Petersilie', NULL, 3),
-('Petersilie', NULL, 4),
-('Petersilie', NULL, 5),
-('Rosmarin', 1, 3),
-('Rosmarin', NULL, 4),
-('Salbei', 1, 2),
-('Salbei', NULL, 3),
-('Salbei', NULL, 4),
-('Salbei', NULL, 5),
-('Schnittlauch', 1, 2),
-('Schnittlauch', 2, 3),
-('Thymian', 1, 4),
-('Thymian', NULL, 5),
-('Thymian', NULL, 6);
+INSERT INTO `place2` (`idp`, `descrp2`) VALUES
+(0, ' '),
+(1, '/ Sonne'),
+(2, '/ Halbschatten'),
+(3, '/ Schatten'),
+(4, '/ egal');
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `placetimes`
+--
+
+CREATE TABLE `placetimes` (
+  `mname` varchar(30) COLLATE utf8_bin NOT NULL,
+  `place` int(11) DEFAULT NULL,
+  `place2` int(11) DEFAULT NULL,
+  `month` int(11) DEFAULT NULL,
+  `month2` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Daten für Tabelle `placetimes`
+--
+
+INSERT INTO `placetimes` (`mname`, `place`, `place2`, `month`, `month2`) VALUES
+('Basilikum', 1, 0, 3, 4),
+('Dill', 1, 0, 4, 5),
+('Koriander', 1, 2, 3, 6),
+('Kresse', 4, 0, 13, 0),
+('Minze', 2, 0, 3, 4),
+('Petersilie', 1, 2, 10, 5),
+('Rosmarin', 1, 0, 3, 4),
+('Salbei', 1, 0, 2, 5),
+('Schnittlauch', 1, 2, 2, 3),
+('Thymian', 1, 0, 4, 6);
 
 -- --------------------------------------------------------
 
@@ -258,18 +304,31 @@ ALTER TABLE `months`
   ADD PRIMARY KEY (`idm`);
 
 --
+-- Indizes für die Tabelle `months2`
+--
+ALTER TABLE `months2`
+  ADD PRIMARY KEY (`idm`);
+
+--
 -- Indizes für die Tabelle `place`
 --
 ALTER TABLE `place`
   ADD PRIMARY KEY (`idp`);
 
 --
--- Indizes für die Tabelle `placetime`
+-- Indizes für die Tabelle `place2`
 --
-ALTER TABLE `placetime`
-  ADD KEY `mname` (`mname`),
+ALTER TABLE `place2`
+  ADD PRIMARY KEY (`idp`);
+
+--
+-- Indizes für die Tabelle `placetimes`
+--
+ALTER TABLE `placetimes`
   ADD KEY `place` (`place`),
-  ADD KEY `month` (`month`);
+  ADD KEY `place2` (`place2`),
+  ADD KEY `month` (`month`),
+  ADD KEY `month2` (`month2`);
 
 --
 -- Indizes für die Tabelle `users`
@@ -303,12 +362,13 @@ ALTER TABLE `datei`
   ADD CONSTRAINT `datei_ibfk_1` FOREIGN KEY (`mname`) REFERENCES `medium` (`mname`);
 
 --
--- Constraints der Tabelle `placetime`
+-- Constraints der Tabelle `placetimes`
 --
-ALTER TABLE `placetime`
-  ADD CONSTRAINT `placetime_ibfk_1` FOREIGN KEY (`mname`) REFERENCES `medium` (`mname`),
-  ADD CONSTRAINT `placetime_ibfk_2` FOREIGN KEY (`place`) REFERENCES `place` (`idp`),
-  ADD CONSTRAINT `placetime_ibfk_3` FOREIGN KEY (`month`) REFERENCES `months` (`idm`);
+ALTER TABLE `placetimes`
+  ADD CONSTRAINT `placetimes_ibfk_1` FOREIGN KEY (`place`) REFERENCES `place` (`idp`),
+  ADD CONSTRAINT `placetimes_ibfk_2` FOREIGN KEY (`place2`) REFERENCES `place2` (`idp`),
+  ADD CONSTRAINT `placetimes_ibfk_3` FOREIGN KEY (`month`) REFERENCES `months` (`idm`),
+  ADD CONSTRAINT `placetimes_ibfk_4` FOREIGN KEY (`month2`) REFERENCES `months2` (`idm`);
 
 --
 -- Constraints der Tabelle `wunschliste`
