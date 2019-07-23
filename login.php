@@ -1,7 +1,4 @@
 <?php
-
-
-
    include ("connect.php");
    session_start();
 
@@ -11,7 +8,7 @@
       $myemail = $_POST['email'];
       $mypassword = $_POST['password'];
 
-      $sql = "SELECT uname FROM users WHERE email = '$myemail' and passwort = '$mypassword'";
+      $sql = "SELECT uname, userrights FROM users WHERE email = '$myemail' and passwort = '$mypassword'";
       $result = mysqli_query($conn,$sql);
 
 
@@ -22,8 +19,10 @@
           while($row = mysqli_fetch_assoc($result)) {
 
               $_SESSION['name'] = $row["uname"];
+              $_SESSION['uright']= $row["userrights"];
               $_SESSION['email'] = $myemail;
               $_SESSION['pwd'] = $mypassword;
+              $_SESSION['loggedin'] = true;
               $name = $_SESSION['name'];
               //$error = "Willkommen " . $name ."<br>";
               header("Location:welcome.php");
@@ -152,6 +151,7 @@ Navigation Bar
 <!-- Buttons inside the navigation bar-->
 <button type="button"  value="Check" onclick="window.location = 'registrieren.php'">Registrieren</button>
 <button type="button"  value="Check" onclick="window.location = 'login.php'">Login</button>
+<button type="button"  value="Check" onclick="window.location = 'profil.php'">Profil</button>
 
 
 

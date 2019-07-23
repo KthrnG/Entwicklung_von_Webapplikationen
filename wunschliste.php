@@ -6,7 +6,13 @@
         <link rel="stylesheet" href="main_stylesheet.css">
     </head>
     <body>
+    <?php
+      include ("connect.php");
+      session_start();
+      $name = $_SESSION['name'];
 
+
+     ?>
       <!--
       .................
       .................
@@ -49,9 +55,10 @@
         <ul id="menu">
           <a href="index.php"><li>Start</li></a>
           <a href="about.html"><li>About</li></a>
-          <a href="search.html"><li class="active">Suche</li></a>
+          <a href="search.html"><li>Suche</li></a>
           <a href="abisz.html"><li>Kräuter A - Z</li></a>
           <a href="impressum.html"><li>Impressum</li></a>
+
 
         </ul>
       </div>
@@ -69,40 +76,28 @@
     <div class="navbar">
 
       <!-- Buttons inside the navigation bar-->
-      <button type="button"  value="Check" onclick="window.location = 'registrieren.php'">Registrieren</button>
-      <button type="button"  value="Check" onclick="window.location = 'login.php'">Login</button>
+      <button type="button"  value="Check" onclick="window.location = 'logout.php'">Logout</button>
       <button type="button"  value="Check" onclick="window.location = 'profil.php'">Profil</button>
 
     </div>
-    <h1> Suche
-      <div class= "search">
-        <input>
-      </div>
-    </h1>
-    <div align="center">
-    <form method="post" action="showall.php">
-        <button type="submit" class="button" name="select" >Alle anzeigen </button>
-    </form>
-  </div>
-
+    <h1> Wunschliste von <?php echo $name?> </h1>
 
 
     <footer>
       <div class="footerbox">
         <a href="index.php"><li>Start</li></a>
         <a href="about.html"><li>About</li></a>
-        <a href="search.html"><li class="active">Suche</li></a>
+        <a href="search.html"><li>Suche</li></a>
         <a href="abisz.html"><li>Kräuter A - Z</li></a>
         <a href="impressum.html"><li>Impressum</li></a>
-      </div>
-      <div class="footerbox">
-      </div>
-      <div class="footerbox">
-      </div>
-      <div class="footerbox">
-      </div>
 
-
+      </div>
+      <div class="footerbox">
+      </div>
+      <div class="footerbox">
+      </div>
+      <div class="footerbox">
+      </div>
       <div class="copyright">
         <p>© 2019 Universität Bremen</p>
       </div>

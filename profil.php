@@ -1,4 +1,18 @@
-<!DOCTYPE html>
+<?php
+  include ("connect.php");
+  session_start();
+  $name = $_SESSION['name'];
+  $email = $_SESSION['email'];
+  $pwd = $_SESSION['pwd'];
+  $uright = $_SESSION['uright'];
+  if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+    echo "Welcome to the member's area, " . $_SESSION['username'] . "!";
+} else {
+  header("Location:error.html");
+  exit();
+}
+ ?>
+ <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8" content="width=device-width">
@@ -6,14 +20,7 @@
         <link rel="stylesheet" href="main_stylesheet.css">
     </head>
     <body>
-<?php
-  include ("connect.php");
-  session_start();
-  $name = $_SESSION['name'];
-  $email = $_SESSION['email'];
-  $pwd = $_SESSION['pwd'];
 
- ?>
  <style>
 #bearbeiten {
      /*float: right;*/
@@ -36,6 +43,25 @@
    /*filter: alpha(opacity=60);*/
    color: #0a632d;
    border: 3px solid #0a632d;
+ }
+ #admin {
+   float:right;
+   display: block;
+   background-color: white;
+   color: #F26547;
+   font-size: 16px;
+   text-align: center;
+   border: none;
+   padding: 15px 25px;
+   margin: 20px 25px 0px 5px;
+   text-decoration: none;
+   width: 200px;
+   border: 3px solid #F26547;
+ }
+ #admin:hover {
+   background-color: #F26547;
+   color:white;
+
  }
  #datennutzer{
    list-style-type: none;
@@ -113,10 +139,13 @@
 
      <!-- Buttons inside the navigation bar-->
      <button type="button" id="logoutt" value="Check" onclick="window.location = 'logout.php'">Logout</button>
-
-     <button type="button" id="profil" value="Check" onclick="window.location = 'profil.php'">Profil</button>
+     <button type="button" id="wunschliste" value="Check" onclick="window.location = 'wunschliste.php'">Wunschliste</button>
+     <!--<button type="button" id="profil" value="Check" onclick="window.location = 'profil.php'">Profil</button>-->
    </div>
-
+   <?php
+   if($uright==1){echo "<button type='button' id='admin' value='Check' onclick='window.location = \"admin.html\"'>Adminbereich</button>";}
+   ?>
+   <br>
    <h1> Profil </h1>
    <div align="center">
     <br>
@@ -125,7 +154,10 @@
       <li><p><b> E-Mail: </b><?php echo $email ?> </p></li>
       <li><p><b> Passwort: </b><?php echo $pwd ?> </p></li>
 
-    <button type="button" id="bearbeiten" value="Check" onclick="window.location = 'editprofil.php'">Daten bearbeiten</button>
+    <button type="button" id="bearbeiten" value="Check" onclick="window.location = 'editprofil.php'">Daten bearbeiten</button><br>
+
+
+
     </ul>
    </div>
    <footer>
