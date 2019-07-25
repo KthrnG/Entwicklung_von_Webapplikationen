@@ -7,6 +7,35 @@
         <link rel="stylesheet" href="main_stylesheet.css">
     </head>
     <body>
+      <style>
+      table {
+        text-align: left;
+        border-collapse: collapse;
+        border: 1px solid #0a632d;
+        background: #fff;
+        min-width: 700px;
+        }
+
+      table th,
+      table tr:nth-child(2n+2) {
+        background: rgba(10,99,45, 0.3);
+        }
+
+      table th,
+      table td {
+        padding: 12px 20px;
+        }
+
+      table th {
+        border-bottom: 1px solid #0a632d;
+        background-color: #0a632d;
+        color: white;
+        }
+        a {
+          text-decoration: none;
+          color: #0a632d;
+        }
+        </style>
 
       <!--
       .................
@@ -78,7 +107,7 @@
     <h1> Alle Kräuter
     </h1>
     <div align="center">
-      <ul style="list-style-type: none; text-align:left; margin-left: 43%;">
+
       <?php
       include ("connect.php");
 
@@ -89,14 +118,29 @@
           $result = mysqli_query($conn, $sql);
 
           if (mysqli_num_rows($result) > 0) {
+            echo "<table>";
+            echo "<tr>";
+            echo "<th></th>";
+            echo "<th>Name</th>";
+            echo "<th>Standort</th>";
+            echo "<th>Jahreszeit</th>";
+            echo "</tr>";
             while($row = mysqli_fetch_assoc($result)) {
-              echo "<li>
+              echo "<tr>";
+               echo "<td> <img class='image' style='width:70px;' src='" .$row["adr"]. "' /></td><td>
+               <a href ='" .$row["link"]. "'>". $row["mname"]."</a>  </td>";
+               echo "<td>" .$row["descrp"].$row["descrp2"] . "</td>";
+               echo "<td>" . $row["month"] ." ". $row["month2"] . "</td>";
+               echo "</tr>";
+              /*echo "<li>
               <img class='image' style='width:70px;' src='".$row["adr"]."' />
               <a href ='".$row["link"]."'>"
               . $row["mname"].
               "</a> Standort: ".$row["descrp"].$row["descrp2"]." Jahreszeit: ". $row["month"] ." ". $row["month2"].
-               "</li> <br> <br>";
+               "</li> <br> <br>";*/
             }
+            echo "</table>";
+            mysqli_free_result($result);
           }
 
             /*
@@ -126,7 +170,7 @@
 
 
       ?>
-    </ul>
+
   </div>
 
 
