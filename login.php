@@ -127,7 +127,7 @@ Hamburger Menu
     <!--menu points inside the foldout menu-->
   <ul id="menu">
     <a href="index.php"><li>Start</li></a>
-    <a href="about.html"><li>About</li></a>
+    <a href="about.php"><li>About</li></a>
     <a href="search.html"><li>Suche</li></a>
     <a href="abisz.html"><li>Kräuter A - Z</li></a>
     <a href="impressum.html"><li >Impressum</li></a>
@@ -187,7 +187,7 @@ Navigation Bar
 <footer>
 <div class="footerbox">
   <a href="index.php"><li>Start</li></a>
-  <a href="about.html"><li>About</li></a>
+  <a href="about.php"><li>About</li></a>
   <a href="search.html"><li>Suche</li></a>
   <a href="abisz.html"><li>Kräuter A - Z</li></a>
   <a href="impressum.html"><li >Impressum</li></a>

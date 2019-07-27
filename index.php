@@ -165,7 +165,7 @@ include "includes/navigationBar.php";
             <a href="index.php">
                 <li class="active">Start</li>
             </a>
-            <a href="about.html">
+            <a href="about.php">
                 <li>About</li>
             </a>
             <a href="search.html">

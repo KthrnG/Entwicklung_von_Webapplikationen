@@ -15,7 +15,7 @@
                     Start
                 </li>
             </a>
-            <a href="about.html">
+            <a href="about.php">
                 <li <?php if ($page == "about") echo "class='active'"; ?> >
                     About
                 </li>
