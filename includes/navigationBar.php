@@ -1,9 +1,18 @@
 <div class="navbar">
+    <?php
+    include("includes/connect.php");
 
-    <!-- Buttons inside the navigation bar-->
-
-    <button type="button"  value="Check" onclick="window.location = 'registrieren.php'">Registrieren</button>
-    <button type="button"  value="Check" onclick="window.location = 'login.php'">Login</button>
-    <button type="button"  value="Check" onclick="window.location = 'profil.php'">Profil</button>
-
+    if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
+        echo '
+        <a href="logout.php">Logout</a>
+        <a href="profil.php">Profil</a>
+        <a href="wunschliste.php">Wunschliste</a>
+        ';
+    } else {
+        echo '
+        <a href="registrieren.php">Registrieren</a>
+        <a href="login.php">Login</a>
+        ';
+    }
+    ?>
 </div>

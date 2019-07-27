@@ -109,11 +109,13 @@ h1.ontop {
     display: block;
     background-color: #0a632d;
     color: white;
+    font-size: 16px;
     text-align: center;
     padding: 15px 25px;
     margin: 0px 5px 0px 5px;
     text-decoration: none;
 }
+
 .navbar button {
     float: right;
     display: block;
@@ -127,14 +129,12 @@ h1.ontop {
     text-decoration: none;
 }
 
-
 .navbar button:hover {
   background-color: white;
   opacity: 0.6;
   filter: alpha(opacity=60);
   color: black;
 }
-
 
 li.active {
     color: #0a632d;
