@@ -25,7 +25,7 @@ footer {
 
 /* Header image*/
 .background {
-    background: url(img/header.png);
+    background: url(../img/header.png);
     top: 0;
     border: 0.1px solid black;
     background-repeat: no-repeat;
@@ -47,7 +47,7 @@ h1.ontop {
 
 /* Herb Header image*/
 .herbheader {
-    background: url(img/herbheader.png);
+    background: url(../img/herbheader.png);
     border: 0.1px solid white;
     background-repeat: no-repeat;
     background-size: cover;
