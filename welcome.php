@@ -11,7 +11,7 @@
 <?php
 include("includes/connect.php");
 $name = $_SESSION['name'];
-$message = "Willkommen <b> $name </b>";
+$message = "Willkommen, <b>$name</b>!";
 ?>
 
 <?php

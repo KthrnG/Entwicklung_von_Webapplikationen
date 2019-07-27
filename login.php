@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             exit();
         }
     } else {
-        $error = "No user found";
+        $error = "Login fehlgeschlagen";
     }
 }
 ?>
@@ -96,7 +96,10 @@ include "includes/navigationBar.php";
         Login </button><br/>
     </form>
 
-    <div style="font-size:11px; color:#cc0000; margin-top:10px"><?php echo $error; ?></div>
+    <?php if (isset($error)) {
+        echo '<div style="font-size:11px; color:#cc0000; margin-top:10px">' . $error . '</div>';
+    }
+    ?>
 </div>
 
 <?php

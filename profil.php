@@ -4,9 +4,7 @@ $name = $_SESSION['name'];
 $email = $_SESSION['email'];
 $pwd = $_SESSION['pwd'];
 $uright = $_SESSION['uright'];
-if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-    echo "Welcome to the member's area, " . $_SESSION['username'] . "!";
-} else {
+if (!isset($_SESSION['loggedin']) || !$_SESSION['loggedin']) {
     header("Location:error.php");
     exit();
 }

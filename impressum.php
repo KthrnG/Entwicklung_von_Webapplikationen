@@ -9,6 +9,7 @@
 
 <?php
 $page = "impressum";
+include "includes/connect.php";
 include "includes/headerbox.php";
 include "includes/hamburgerMenu.php";
 include "includes/navigationBar.php";
