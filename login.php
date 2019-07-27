@@ -33,9 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html>
 
 <head>
-    <meta charset="utf-8" content="width=device-width">
-    <title>Das Kräuterarchiv</title>
-    <link rel="stylesheet" href="css/main_stylesheet.css">
+    <?php include "includes/head.php" ?>
 </head>
 
 <body>

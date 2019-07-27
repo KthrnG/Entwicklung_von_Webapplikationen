@@ -2,9 +2,7 @@
 <html>
 
 <head>
-    <meta charset="utf-8" content="width=device-width">
-    <title>Kräutergarten</title>
-    <link rel="stylesheet" href="css/main_stylesheet.css">
+    <?php include "includes/head.php" ?>
 </head>
 
 <body>
