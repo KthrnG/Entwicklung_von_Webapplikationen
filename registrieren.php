@@ -45,7 +45,6 @@ if (isset($_POST['save'])) {
         /*float: right;*/
     }
 
-
     form .statement {
         display: block;
         text-align: left;
@@ -53,8 +52,6 @@ if (isset($_POST['save'])) {
         font-weight: bold;
         padding: 30px 0 0 0; /*4.25%;*/
         margin-bottom: 10px;
-        /*margin-left: 25%;
-margin-right: 20px;*/
     }
 
     form button {
@@ -62,7 +59,7 @@ margin-right: 20px;*/
     }
 
     #el {
-        margin-left: 40px;
+        /*margin-left: 40px;*/
     }
 
 </style>
@@ -78,20 +75,23 @@ include "includes/navigationBar.php";
 <div align="center">
     <form method="post">
         <div id="el">
-            <label class="statement">Benutzername(max. 20 Zeichen)</label>
-            <input type="text" maxlength="20" name="uname"></input>
+            <label class="statement">Benutzername (max. 20 Zeichen)
+                <input type="text" maxlength="20" name="uname"/>
+            </label>
             <br>
         </div>
 
         <div id="el">
-            <label class="statement">E-Mail Adresse</label>
-            <input type="email" maxlength="40" name="email"></input>
+            <label class="statement">E-Mail Adresse
+                <input type="email" maxlength="40" name="email"/>
+            </label>
             <br>
         </div>
 
         <div id="el">
-            <label class="statement">Passwort(max.20 Zeichen)</label>
-            <input type="password" maxlength="20" name="passwort"></input>
+            <label class="statement">Passwort (max.20 Zeichen)
+                <input type="password" maxlength="20" name="passwort"/>
+            </label>
         </div>
         <br>
         <button type="submit" name="save">Registrieren</button>

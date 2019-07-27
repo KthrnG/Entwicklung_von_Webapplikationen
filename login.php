@@ -83,12 +83,14 @@ include "includes/navigationBar.php";
 <div align="center">
     <form action="" method="post">
         <div id="el">
-            <label class="statement">E-Mail</label>
-            <input type="text" name="email" size="40" class="box"/><br/><br/>
+            <label class="statement">E-Mail
+                <input type="text" name="email" size="40" class="box"/>
+            </label>
         </div>
         <div id="el">
-            <label class="statement">Passwort</label>
-            <input type="password" name="password" size="40" class="box"/><br/><br/>
+            <label class="statement">Passwort
+                <input type="password" name="password" size="40" class="box"/>
+            </label>
         </div>
         <button type="submit" value=" Submit "/>
         Login </button><br/>

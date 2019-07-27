@@ -67,10 +67,9 @@ Textboxes Area
 -->
 <!--image-->
 <div class="herbheader">
-    <!--title-->
-    <h1 class="ontop"> Kräuter </h1>
-    <!-- transparent box-->
-    <div class="transbox"></div>
+    <div class="transbox">
+        <h1 class="ontop"> Kräuter </h1>
+    </div>
 </div>
 
 
