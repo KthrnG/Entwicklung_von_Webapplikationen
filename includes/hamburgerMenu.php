@@ -25,7 +25,7 @@
                     Suche
                 </li>
             </a>
-            <a href="abisz.html">
+            <a href="abisz.php">
                 <li <?php if ($page == "abisz") echo "class='active'"; ?> >
                     Kräuter A - Z
                 </li>

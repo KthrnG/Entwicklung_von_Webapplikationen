@@ -129,7 +129,7 @@ Hamburger Menu
     <a href="index.php"><li>Start</li></a>
     <a href="about.php"><li>About</li></a>
     <a href="search.php"><li>Suche</li></a>
-    <a href="abisz.html"><li>Kräuter A - Z</li></a>
+    <a href="abisz.php"><li>Kräuter A - Z</li></a>
     <a href="impressum.html"><li >Impressum</li></a>
 
 
@@ -189,7 +189,7 @@ Navigation Bar
   <a href="index.php"><li>Start</li></a>
   <a href="about.php"><li>About</li></a>
   <a href="search.php"><li>Suche</li></a>
-  <a href="abisz.html"><li>Kräuter A - Z</li></a>
+  <a href="abisz.php"><li>Kräuter A - Z</li></a>
   <a href="impressum.html"><li >Impressum</li></a>
 
 </div>

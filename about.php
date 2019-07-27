@@ -46,7 +46,7 @@ include "includes/navigationBar.php";
             <a href="search.php">
                 <li>Suche</li>
             </a>
-            <a href="abisz.html">
+            <a href="abisz.php">
                 <li>Kräuter A - Z</li>
             </a>
             <a href="impressum.html">
