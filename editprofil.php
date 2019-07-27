@@ -203,7 +203,7 @@
 
    </footer>
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-<script src="main.js"></script>
+<script src="js/main.js"></script>
 
  </body>
  </html>
