@@ -143,7 +143,7 @@
      <!--<button type="button" id="profil" value="Check" onclick="window.location = 'profil.php'">Profil</button>-->
    </div>
    <?php
-   if($uright==1){echo "<button type='button' id='admin' value='Check' onclick='window.location = \"admin.html\"'>Adminbereich</button>";}
+   if($uright==1){echo "<button type='button' id='admin' value='Check' onclick='window.location = admin.php>Adminbereich</button>";}
    ?>
    <br>
    <h1> Profil </h1>
