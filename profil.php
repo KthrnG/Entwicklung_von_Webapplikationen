@@ -1,187 +1,118 @@
 <?php
-  include("includes/connect.php");
-  session_start();
-  $name = $_SESSION['name'];
-  $email = $_SESSION['email'];
-  $pwd = $_SESSION['pwd'];
-  $uright = $_SESSION['uright'];
-  if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+include("includes/connect.php");
+$name = $_SESSION['name'];
+$email = $_SESSION['email'];
+$pwd = $_SESSION['pwd'];
+$uright = $_SESSION['uright'];
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
     echo "Welcome to the member's area, " . $_SESSION['username'] . "!";
 } else {
-  header("Location:error.php");
-  exit();
+    header("Location:error.php");
+    exit();
 }
- ?>
- <!DOCTYPE html>
+?>
+<!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8" content="width=device-width">
-        <title>Kräutergarten</title>
-        <link rel="stylesheet" href="css/main_stylesheet.css">
-    </head>
-    <body>
+<head>
+    <meta charset="utf-8" content="width=device-width">
+    <title>Kräutergarten</title>
+    <link rel="stylesheet" href="css/main_stylesheet.css">
+</head>
+<body>
 
- <style>
-#bearbeiten {
-     /*float: right;*/
-     display: block;
-     background-color: #0a632d;
-     color: white;
-     font-size: 16px;
-     text-align: center;
-     border: none;
-     padding: 15px 25px;
-     margin: 30px 5px 0px 5px;
-     text-decoration: none;
-     width: 200px;
-     border: 3px solid #0a632d;
- }
+<style>
+    #bearbeiten {
+        /*float: right;*/
+        display: block;
+        background-color: #0a632d;
+        color: white;
+        font-size: 16px;
+        text-align: center;
+        border: none;
+        padding: 15px 25px;
+        margin: 30px 5px 0px 5px;
+        text-decoration: none;
+        width: 200px;
+        border: 3px solid #0a632d;
+    }
 
- #bearbeiten:hover {
-   background-color: white;
-   /*opacity: 0.6;*/
-   /*filter: alpha(opacity=60);*/
-   color: #0a632d;
-   border: 3px solid #0a632d;
- }
- #admin {
-   float:right;
-   display: block;
-   background-color: white;
-   color: #F26547;
-   font-size: 16px;
-   text-align: center;
-   border: none;
-   padding: 15px 25px;
-   margin: 20px 25px 0px 5px;
-   text-decoration: none;
-   width: 200px;
-   border: 3px solid #F26547;
- }
- #admin:hover {
-   background-color: #F26547;
-   color:white;
+    #bearbeiten:hover {
+        background-color: white;
+        /*opacity: 0.6;*/
+        /*filter: alpha(opacity=60);*/
+        color: #0a632d;
+        border: 3px solid #0a632d;
+    }
 
- }
- #datennutzer{
-   list-style-type: none;
-   text-align: left;
-   margin-left: 43%;
- }
- #datennutzer li{
-   margin-left: 15px;
- }
+    #admin {
+        float: right;
+        display: block;
+        background-color: white;
+        color: #F26547;
+        font-size: 16px;
+        text-align: center;
+        border: none;
+        padding: 15px 25px;
+        margin: 20px 25px 0px 5px;
+        text-decoration: none;
+        width: 200px;
+        border: 3px solid #F26547;
+    }
 
- </style>
+    #admin:hover {
+        background-color: #F26547;
+        color: white;
 
+    }
 
-     <!--
-     .................
-     .................
-     .................
-     Headerbox
-     .................
-     .................
-     .................
-     -->
-     <!--image-->
-     <div class="background">
-       <!--title here so it isn't transparent-->
-       <h1 class="ontop"> Webseitenname </h1>
-       <a href="index.php">
-         <!-- transparent box-->
-         <div class="transbox"></div>
-       </a>
-     </div>
+    #datennutzer {
+        list-style-type: none;
+        text-align: left;
+        margin-left: 43%;
+    }
 
-     <!--
-     .................
-     .................
-     .................
-     Hamburger Menu
-     .................
-     .................
-     .................
-     -->
-     <nav role="navigation">
-       <div id="menuToggle">
-         <!--click reciever-->
-         <input type="checkbox" />
+    #datennutzer li {
+        margin-left: 15px;
+    }
 
-         <!--hamburger form-->
-         <span></span>
-         <span></span>
-         <span></span>
+</style>
 
-         <!--menu points inside the foldout menu-->
-       <ul id="menu">
-         <a href="index.php"><li>Start</li></a>
-         <a href="about.php"><li>About</li></a>
-         <a href="search.php"><li>Suche</li></a>
-         <a href="abisz.php"><li>Kräuter A - Z</li></a>
-         <a href="impressum.php"><li>Impressum</li></a>
+<?php
+$page = "profil";
+include "includes/headerbox.php";
+include "includes/hamburgerMenu.php";
+include "includes/navigationBar.php";
+?>
 
-
-       </ul>
-     </div>
-   </nav>
-
-   <!--
-   .................
-   .................
-   .................
-   Navigation Bar
-   .................
-   .................
-   .................
-   -->
-   <div class="navbar">
-
-     <!-- Buttons inside the navigation bar-->
-     <button type="button" id="logoutt" value="Check" onclick="window.location = 'logout.php'">Logout</button>
-     <button type="button" id="wunschliste" value="Check" onclick="window.location = 'wunschliste.php'">Wunschliste</button>
-     <!--<button type="button" id="profil" value="Check" onclick="window.location = 'profil.php'">Profil</button>-->
-   </div>
-   <?php
-   if($uright==1){echo "<button type='button' id='admin' value='Check' onclick='window.location = admin.php>Adminbereich</button>";}
-   ?>
-   <br>
-   <h1> Profil </h1>
-   <div align="center">
+<?php
+if ($uright == 1) {
+    echo "<button type='button' id='admin' value='Check' onclick='window.location = admin.php>Adminbereich</button>";
+}
+?>
+<br>
+<h1> Profil </h1>
+<div align="center">
     <br>
     <ul id="datennutzer">
-      <li><p><b> Benutzername: </b><?php echo $name ?></p></li>
-      <li><p><b> E-Mail: </b><?php echo $email ?> </p></li>
-      <li><p><b> Passwort: </b><?php echo $pwd ?> </p></li>
+        <li><p><b> Benutzername: </b><?php echo $name ?></p></li>
+        <li><p><b> E-Mail: </b><?php echo $email ?> </p></li>
+        <li><p><b> Passwort: </b><?php echo $pwd ?> </p></li>
 
-    <button type="button" id="bearbeiten" value="Check" onclick="window.location = 'editprofil.php'">Daten bearbeiten</button><br>
-
+        <button type="button" id="bearbeiten" value="Check" onclick="window.location = 'editprofil.php'">Daten
+            bearbeiten
+        </button>
+        <br>
 
 
     </ul>
-   </div>
-   <footer>
-     <div class="footerbox">
-       <a href="index.php"><li>Start</li></a>
-       <a href="about.php"><li>About</li></a>
-       <a href="search.php"><li>Suche</li></a>
-       <a href="abisz.php"><li>Kräuter A - Z</li></a>
-       <a href="impressum.php"><li>Impressum</li></a>
+</div>
 
-     </div>
-     <div class="footerbox">
-     </div>
-     <div class="footerbox">
-     </div>
-     <div class="footerbox">
-     </div>
-     <div class="copyright">
-       <p>© 2019 Universität Bremen</p>
-     </div>
+<?php
+include "includes/footerbox.php";
+?>
 
-   </footer>
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 <script src="js/main.js"></script>
 
- </body>
- </html>
+</body>
+</html>
