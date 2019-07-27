@@ -12,12 +12,10 @@
 <?php
 // Initialize the session
 include("includes/connect.php");
-session_start();
 session_destroy();
 $name = "Gast";
 
 $message = "Du bist jetzt ausgeloggt. Bis zum nächsten Mal.";
-
 
 ?>
 <!--

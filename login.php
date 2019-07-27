@@ -1,6 +1,5 @@
 <?php
    include("includes/connect.php");
-   session_start();
 
    if($_SERVER["REQUEST_METHOD"] == "POST") {
       // username and password sent from form
@@ -26,6 +25,7 @@
               $name = $_SESSION['name'];
               //$error = "Willkommen " . $name ."<br>";
               header("Location:welcome.php");
+              session_start();
 			        exit();
 
       }
