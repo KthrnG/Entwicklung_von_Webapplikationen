@@ -107,37 +107,9 @@ Herb Images with Links
 
 </div>
 
-
-<footer>
-    <div class="footerbox">
-        <a href="index.php">
-            <li>Start</li>
-        </a>
-        <a href="about.php">
-            <li>About</li>
-        </a>
-        <a href="search.php">
-            <li>Suche</li>
-        </a>
-        <a href="abisz.php">
-            <li class="active">Kräuter A - Z</li>
-        </a>
-        <a href="impressum.php">
-            <li>Impressum</li>
-        </a>
-    </div>
-    <div class="footerbox">
-    </div>
-    <div class="footerbox">
-    </div>
-    <div class="footerbox">
-    </div>
-    <div class="copyright">
-        <p>© 2019 Universität Bremen</p>
-    </div>
-
-</footer>
-
+<?php
+include "includes/footerbox.php";
+?>
 
 </body>
 </html>
