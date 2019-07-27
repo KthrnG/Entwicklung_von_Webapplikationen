@@ -11,7 +11,7 @@
 
 <?php
 // Initialize the session
-include ("connect.php");
+include("includes/connect.php");
 session_start();
 session_destroy();
 $name = "Gast";

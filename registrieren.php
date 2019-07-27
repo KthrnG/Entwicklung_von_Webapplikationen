@@ -8,7 +8,7 @@
      </head>
      <body>
      <?php
-       include ("connect.php");
+       include("includes/connect.php");
        $name= 'Gast';
        if(isset($_POST['save']))
        {

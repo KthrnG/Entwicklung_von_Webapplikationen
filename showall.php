@@ -109,7 +109,7 @@
     <div align="center">
 
       <?php
-      include ("connect.php");
+      include("includes/connect.php");
 
       if (isset($_POST['select'])) {
 

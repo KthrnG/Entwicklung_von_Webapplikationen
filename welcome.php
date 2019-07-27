@@ -9,7 +9,7 @@
 
 <body>
 <?php
-include ("connect.php");
+include("includes/connect.php");
 session_start();
 $name = $_SESSION['name'];
 $message = "Willkommen <b> $name </b>";
