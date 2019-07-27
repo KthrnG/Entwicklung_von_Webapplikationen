@@ -8,7 +8,7 @@
   if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
     echo "Welcome to the member's area, " . $_SESSION['username'] . "!";
 } else {
-  header("Location:error.html");
+  header("Location:error.php");
   exit();
 }
  ?>
