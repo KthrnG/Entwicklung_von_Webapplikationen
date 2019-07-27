@@ -49,7 +49,7 @@ include "includes/navigationBar.php";
             <a href="abisz.php">
                 <li>Kräuter A - Z</li>
             </a>
-            <a href="impressum.html">
+            <a href="impressum.php">
                 <li>Impressum</li>
             </a>
         </div>

@@ -119,7 +119,7 @@
          <a href="about.php"><li>About</li></a>
          <a href="search.php"><li>Suche</li></a>
          <a href="abisz.php"><li>Kräuter A - Z</li></a>
-         <a href="impressum.html"><li>Impressum</li></a>
+         <a href="impressum.php"><li>Impressum</li></a>
 
 
        </ul>
@@ -166,7 +166,7 @@
        <a href="about.php"><li>About</li></a>
        <a href="search.php"><li>Suche</li></a>
        <a href="abisz.php"><li>Kräuter A - Z</li></a>
-       <a href="impressum.html"><li>Impressum</li></a>
+       <a href="impressum.php"><li>Impressum</li></a>
 
      </div>
      <div class="footerbox">

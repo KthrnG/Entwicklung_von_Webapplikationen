@@ -30,7 +30,7 @@
                     Kräuter A - Z
                 </li>
             </a>
-            <a href="impressum.html">
+            <a href="impressum.php">
                 <li <?php if ($page == "impressum") echo "class='active'"; ?> >
                     Impressum
                 </li>
