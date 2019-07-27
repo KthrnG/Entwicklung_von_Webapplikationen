@@ -168,7 +168,7 @@ include "includes/navigationBar.php";
             <a href="about.php">
                 <li>About</li>
             </a>
-            <a href="search.html">
+            <a href="search.php">
                 <li>Suche</li>
             </a>
             <a href="abisz.html">

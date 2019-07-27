@@ -79,7 +79,7 @@
         <ul id="menu">
           <a href="index.php"><li>Start</li></a>
           <a href="about.php"><li>About</li></a>
-          <a href="search.html"><li class="active">Suche</li></a>
+          <a href="search.php"><li class="active">Suche</li></a>
           <a href="abisz.html"><li>Kräuter A - Z</li></a>
           <a href="impressum.html"><li>Impressum</li></a>
 
@@ -179,7 +179,7 @@
       <div class="footerbox">
         <a href="index.php"><li>Start</li></a>
         <a href="about.php"><li>About</li></a>
-        <a href="search.html"><li class="active">Suche</li></a>
+        <a href="search.php"><li class="active">Suche</li></a>
         <a href="abisz.html"><li>Kräuter A - Z</li></a>
         <a href="impressum.html"><li>Impressum</li></a>
       </div>

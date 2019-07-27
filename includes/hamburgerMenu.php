@@ -20,7 +20,7 @@
                     About
                 </li>
             </a>
-            <a href="search.html">
+            <a href="search.php">
                 <li <?php if ($page == "search") echo "class='active'"; ?> >
                     Suche
                 </li>
