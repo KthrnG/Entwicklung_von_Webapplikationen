@@ -5,7 +5,7 @@
 session_start();
 		$servername = "localhost";
 		$username = "root";//hier benutzernamen eintragen
-		$password = "h24w1996";//hier passwort eintragen
+		$password = "";//hier passwort eintragen
 		$dbname = "webseitewapp";//hier Datenbanknamen eintragen
 
 		// Create connection
