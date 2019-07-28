@@ -184,42 +184,41 @@ Like Button / zu Favoriten hinzufügen
 ---------------------------------
 */
 
-#heart::before {
+.heart::before {
     content: "\f004";
-    font-family: 'Font Awesome 5 Free';
+    font-family: 'Font Awesome 5 Free', sans-serif;
     font-weight: 900;
     color: #FF6699;
 }
 
-#heart {
-    height: 100%;
-    margin: 0;
+.heart {
+    margin: auto;
     padding-left: 225px;
     margin-top: -15px;
     margin-left: -25px;
 }
 
-#heart:hover {
-    font-size: 20px;
+.heart:hover {
+    font-size: 150%;
 }
 
-
-#thumb::before {
-    content: "\f164    \f164    \f164    \f164   \f164" ;
-    font-family: 'Font Awesome 5 Free';
+.thumb button {
+    font-family: 'Font Awesome 5 Free', sans-serif;
     font-weight: 900;
     color: green;
+    border: none;
 }
 
-#thumb {
+.thumb button:disabled {
+    color: grey;
+}
 
+.thumb {
     margin: 0;
     margin-left: -200px;
     margin-top: 15px;
     padding-left: 225px;
 }
-
-
 
 /*
 ---------------------------------
@@ -306,7 +305,7 @@ Everything for the textboxes
 .relative{
   margin-right: 7%;
 }
-.relative #heart{
+.relative .heart{
 
 }
 
