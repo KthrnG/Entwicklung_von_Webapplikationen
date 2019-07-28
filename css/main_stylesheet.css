@@ -38,7 +38,7 @@ footer {
 }
 
 /* text on transparant box */
-h1.ontop{
+h1.ontop {
     position: relative;
     display: block;
     font-size: 3.7vw;
@@ -151,27 +151,27 @@ li.active {
 }
 
 #login {
-  width:500px;
-  padding: 10px;
-  float: right;
-  background-color: #0a632d;
-  color: white;
-  display: none;
-  flex-direction: row;
-  z-index: 1000;
-  }
+    width: 500px;
+    padding: 10px;
+    float: right;
+    background-color: #0a632d;
+    color: white;
+    display: none;
+    flex-direction: row;
+    z-index: 1000;
+}
 
-#el1{
-  margin-left: 20px;
+#el1 {
+    margin-left: 20px;
 }
 
 #login button {
-  border: 3px solid white;
-  width: 100px;
-  float:right;
-  height: 40px;
-  padding: 5px 5px;
-  margin: 28px 0px 10px 35px;
+    border: 3px solid white;
+    width: 100px;
+    float: right;
+    height: 40px;
+    padding: 5px 5px;
+    margin: 28px 0px 10px 35px;
 }
 
 /*
@@ -184,33 +184,26 @@ Like Button / zu Favoriten hinzufügen
 ---------------------------------
 */
 
-.heart::before {
-    content: "\f004";
-    font-family: 'Font Awesome 5 Free', sans-serif;
-    font-weight: 900;
-    color: #FF6699;
-}
-
 .heart {
     margin: auto;
     padding-left: 225px;
-    margin-top: -15px;
+    margin-top: -20px;
     margin-left: -25px;
 }
 
-.heart:hover {
-    font-size: 150%;
-}
-
-.thumb button {
+.heart button {
     font-family: 'Font Awesome 5 Free', sans-serif;
     font-weight: 900;
-    color: green;
+    color: grey;
     border: none;
 }
 
-.thumb button:disabled {
-    color: grey;
+.heart button:hover {
+    color: #FF6699;
+}
+
+.heart button:disabled {
+    color: #FF6699;
 }
 
 .thumb {
@@ -218,6 +211,21 @@ Like Button / zu Favoriten hinzufügen
     margin-left: -200px;
     margin-top: 15px;
     padding-left: 225px;
+}
+
+.thumb button {
+    font-family: 'Font Awesome 5 Free', sans-serif;
+    font-weight: 900;
+    color: grey;
+    border: none;
+}
+
+.thumb button:hover {
+    color: green;
+}
+
+.thumb button:disabled {
+    color: grey;
 }
 
 /*
@@ -282,30 +290,33 @@ Everything for the textboxes
 }
 
 
-.plantbox{
-  /*margin-left: 100px;*/
+.plantbox {
+    /*margin-left: 100px;*/
 
-  margin-left: 15%;
-  margin-top: 100px;
-  width: 80%;
-  max-width: 1200px;
-  display: flex;
-  flex-flow: row;
+    margin-left: 15%;
+    margin-top: 100px;
+    width: 80%;
+    max-width: 1200px;
+    display: flex;
+    flex-flow: row;
 
-
-}
-.descrBox{
-  margin-left: 80px;;
-  display: flex;
-  flex-flow: column;
-  width: 45%;
-  min-width:600px;
 
 }
-.relative{
-  margin-right: 7%;
+
+.descrBox {
+    margin-left: 80px;;
+    display: flex;
+    flex-flow: column;
+    width: 45%;
+    min-width: 600px;
+
 }
-.relative .heart{
+
+.relative {
+    margin-right: 7%;
+}
+
+.relative .heart {
 
 }
 
@@ -445,52 +456,54 @@ SEARCH
 .search {
     overflow: hidden;
 }
+
 .search a {
-  float:none;
-  display: block;
-  color: green;
-  text-align: center;
-  padding: 1em;
-  text-decoration: none;
-  font-size: 17px;
+    float: none;
+    display: block;
+    color: green;
+    text-align: center;
+    padding: 1em;
+    text-decoration: none;
+    font-size: 17px;
 }
 
 /* Change the color of links on hover */
 .search a:hover {
-  background-color: #0a632d;
-  color: white;
+    background-color: #0a632d;
+    color: white;
 
 }
 
 /* Style the "active" element to highlight the current page */
 .search a.active {
-  background-color: #000000;
-  color: white;
+    background-color: #000000;
+    color: white;
 }
 
 /* Style the search box inside the navigation bar */
 .search input[type=text] {
-  float: left;
-  padding: 6px;
-  border: none;
-  margin-top: 8px;
-  margin-right: 16px;
-  font-size: 17px;
+    float: left;
+    padding: 6px;
+    border: none;
+    margin-top: 8px;
+    margin-right: 16px;
+    font-size: 17px;
 }
 
 /* When the screen is less than 600px wide, stack the links and the search field vertically instead of horizontally */
 @media screen and (max-width: 600px) {
-  .search a, .search input[type=text] {
-    float: none;
-    display: block;
-    text-align: left;
-    width: 100%;
-    margin: 0;
-    padding: 14px;
-  }
-  .search input[type=text] {
-    border: 1px solid #ccc;
-  }
+    .search a, .search input[type=text] {
+        float: none;
+        display: block;
+        text-align: left;
+        width: 100%;
+        margin: 0;
+        padding: 14px;
+    }
+
+    .search input[type=text] {
+        border: 1px solid #ccc;
+    }
 }
 
 /*
@@ -564,8 +577,8 @@ https://codepen.io/erikterwan/pen/EVzeRP
     transform-origin: 4px 0px;
 
     transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
-        background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
-        opacity 0.55s ease;
+    background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+    opacity 0.55s ease;
 }
 
 #menuToggle span:first-child {
@@ -693,11 +706,11 @@ register.php
 }
 
 .form_container button:hover {
-  background-color: white;
-  /*opacity: 0.6;*/
-  /*filter: alpha(opacity=60);*/
-  color: #0a632d;
-  border: 3px solid #0a632d;
+    background-color: white;
+    /*opacity: 0.6;*/
+    /*filter: alpha(opacity=60);*/
+    color: #0a632d;
+    border: 3px solid #0a632d;
 }
 
 #delete_button {
@@ -729,4 +742,33 @@ form input {
     display: flex;
     width: 66%;
     margin: auto;
+}
+
+.search-result table {
+    text-align: left;
+    border-collapse: collapse;
+    border: 1px solid #0a632d;
+    background: #fff;
+    min-width: 700px;
+}
+
+.search-result table th,
+table tr:nth-child(2n+2) {
+    background: rgba(10, 99, 45, 0.3);
+}
+
+.search-result table th,
+table td {
+    padding: 12px 20px;
+}
+
+.search-result table th {
+    border-bottom: 1px solid #0a632d;
+    background-color: #0a632d;
+    color: white;
+}
+
+.search-result a {
+    text-decoration: none;
+    color: #0a632d;
 }

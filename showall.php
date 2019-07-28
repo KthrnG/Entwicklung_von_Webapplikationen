@@ -4,39 +4,10 @@
     <?php include "includes/head.php" ?>
 </head>
 <body>
-<style>
-    table {
-        text-align: left;
-        border-collapse: collapse;
-        border: 1px solid #0a632d;
-        background: #fff;
-        min-width: 700px;
-    }
-
-    table th,
-    table tr:nth-child(2n+2) {
-        background: rgba(10, 99, 45, 0.3);
-    }
-
-    table th,
-    table td {
-        padding: 12px 20px;
-    }
-
-    table th {
-        border-bottom: 1px solid #0a632d;
-        background-color: #0a632d;
-        color: white;
-    }
-
-    a {
-        text-decoration: none;
-        color: #0a632d;
-    }
-</style>
 
 <?php
 $page = "showall";
+include("includes/connect.php");
 include "includes/headerbox.php";
 include "includes/hamburgerMenu.php";
 include "includes/navigationBar.php";
@@ -45,7 +16,6 @@ include "includes/navigationBar.php";
 <h1> Alle Kräuter</h1>
 <div class="search-result">
     <?php
-    include("includes/connect.php");
 
     if (isset($_POST['select'])) {
 
