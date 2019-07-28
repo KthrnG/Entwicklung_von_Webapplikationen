@@ -2,30 +2,27 @@
 include("includes/connect.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // username and password sent from form
+// username and password sent from form
 
     $myemail = $_POST['email'];
     $mypassword = $_POST['password'];
-
-    $sql = "SELECT id, vorname, name, admin FROM users WHERE email = '$myemail' and passwort = '$mypassword'";
+    $sql = "SELECT id, vorname, name, admin, passwort FROM users WHERE email = '$myemail' AND passwort = '$mypassword'";
     $result = mysqli_query($conn, $sql);
 
-    // If result matched $myusername and $mypassword, table row must be 1 row
+// If result matched $myusername table row must be 1 row
     if (mysqli_num_rows($result) == 1) {
-        // output data of each row
-        while ($row = mysqli_fetch_assoc($result)) {
-            $_SESSION['uid'] = $row["id"];
-            $_SESSION['vorname'] = $row["vorname"];
-            $_SESSION['name'] = $row["name"];
-            $_SESSION['admin'] = $row["admin"];
-            $_SESSION['email'] = $myemail;
-            $_SESSION['pwd'] = $mypassword;
-            $_SESSION['loggedin'] = true;
-            $name = $_SESSION['vorname'];
-            //$error = "Willkommen " . $name ."<br>";
-            header("Location:welcome.php");
-            exit();
-        }
+        $row = mysqli_fetch_assoc($result);
+        $_SESSION['uid'] = $row["id"];
+        $_SESSION['vorname'] = $row["vorname"];
+        $_SESSION['name'] = $row["name"];
+        $_SESSION['admin'] = $row["admin"];
+        $_SESSION['email'] = $myemail;
+        $_SESSION['pwd'] = $mypassword;
+        $_SESSION['loggedin'] = true;
+        $name = $_SESSION['vorname'];
+        //$error = "Willkommen " . $name ."<br>";
+        header("Location:welcome.php");
+        exit();
     } else {
         $error = "Login fehlgeschlagen";
     }

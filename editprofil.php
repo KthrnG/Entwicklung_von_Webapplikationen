@@ -15,7 +15,7 @@ $email = $_SESSION['email'];
 $pwd = $_SESSION['pwd'];
 
 if (isset($_POST['delete'])) {
-    $sql = "DELETE FROM users WHERE id = '$uid'";
+    $sql = "DELETE FROM users WHERE id = $uid";
 
     if ($conn->query($sql) === TRUE) {
         header("Location:logout.php");
@@ -26,14 +26,17 @@ if (isset($_POST['delete'])) {
 }
 
 if (isset($_POST['save'])) {
-    $newmail = $_POST['email'];
-    $newpasswort = $_POST['password'];
+    $newemail = $_POST['email'];
+    $newpasswort = $_POST['passwort'];
     $newvorname = $_POST['vorname'];
     $newname = $_POST['name'];
-    $sql = "UPDATE users SET email ='$newmail' AND passwort = '$newpasswort' AND vorname = '$newvorname' AND name = '$newname' WHERE id = '$uid'";
 
-    if ($conn->query($sql) === TRUE) {
-        $_SESSION['email'] = $newmail;
+    $upd = "UPDATE users SET vorname = ?, name = ?, email = ?, passwort = ? WHERE id = ?";
+    $stmt = $conn->prepare($upd);
+    $stmt->bind_param("ssssi", $newvorname, $newname, $newemail, $newpasswort, $uid);
+
+    if ($stmt->execute()) {
+        $_SESSION['email'] = $newemail;
         $_SESSION['pwd'] = $newpasswort;
         $_SESSION['vorname'] = $newvorname;
         $_SESSION['name'] = $newname;
@@ -69,7 +72,7 @@ include "includes/navigationBar.php";
         </label>
 
         <label>Passwort (max. 20 Zeichen)
-            <input type="password" name="password" value="<?php echo $pwd ?>"/>
+            <input type="password" name="passwort" value="<?php echo $pwd ?>"/>
         </label>
 
         <button type="submit" name="save">

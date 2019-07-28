@@ -124,8 +124,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `vorname`, `email`, `passwort`, `admin`) VALUES
-(1, 'M', 'Max', 'max@muster.de', '123abc', 1),
-(2, 'Tester', 'Test', 'test@test.de', 'test', 0);
+(1, 'Tester', 'Test', 'test@test.de', 'test', 0),
+(2, 'M', 'Max', 'max@muster.de', '123abc', 1),
+(3, 'Tiger', 'Teobald', 'teo@tiger.de', 'pass', 0),
+(4, 'WAPP', 'ILove', 'wapp@test.de', 'wappwapp', 0);
 
 -- --------------------------------------------------------
 
