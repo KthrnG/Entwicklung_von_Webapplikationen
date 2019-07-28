@@ -18,7 +18,7 @@ include "includes/navigationBar.php";
 ?>
 
 <?php
-$sql = "SELECT medium.name, datei.adr, medium.id, medium.beschreibung, medium.erntezeit, medium.standort, medium.latein_name, medium.aussaat FROM (medium INNER JOIN datei ON medium.id = datei.medium_id)";
+$sql = "SELECT medium.name, datei.adr, medium.id, medium.beschreibung, medium.erntezeit, medium.standort, medium.latein_name, medium.aussaat FROM (medium INNER JOIN datei ON medium.id = datei.medium_id) WHERE medium.id = $_GET[id]";
 $result = mysqli_query($conn, $sql);
 if (mysqli_num_rows($result) != 1) {
     header("Location:error.php");

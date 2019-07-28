@@ -61,7 +61,16 @@ CREATE TABLE `datei` (
 --
 
 INSERT INTO `datei` (`id`, `medium_id`, `type`, `adr`) VALUES
-(1, 1, 'img', 'img/basil.jpg');
+(1, 1, 'img', 'img/basil.jpg'),
+(2, 2, 'img', 'img/dill.jpg'),
+(3, 3, 'img', 'img/cilantro.jpg'),
+(4, 4, 'img', 'img/kresse.jpg'),
+(5, 5, 'img', 'img/mint.png'),
+(6, 6, 'img', 'img/parsley.jpg'),
+(7, 7, 'img', 'img/rosmary.jpg'),
+(8, 8, 'img', 'img/sage.jpg'),
+(9, 9, 'img', 'img/chive.jpg'),
+(10, 10, 'img', 'img/thyme.jpg');
 
 -- --------------------------------------------------------
 
@@ -84,7 +93,16 @@ CREATE TABLE `medium` (
 --
 
 INSERT INTO `medium` (`id`, `name`, `latein_name`, `standort`, `aussaat`, `erntezeit`, `beschreibung`) VALUES
-(1, 'Basilikum', 'Ocimum basilicum', 'sonnig, naehrstoffreiche und durchlaessige Boeden, maessig giessen', 'Fruehling, ab Ende Maerz bis April', 'ab Mai', 'Eine olfaktorische Reise in den mediterranen Raum.\r\nDurch die Hinzugabe von Basilikum wird eine einfache Tomatensauce zu einer feinen delikaten Sauce. Bekannt nicht nur fuer den kulinarischen Gebrauch sondern auch fuer seine heilenden Kraefte, wirkt Basilikum u.a. gegen Halserkrankungen und Erkaeltungen. Ein Tipp: Basilikum darf weder zu viel noch zu wenig gegossen werden. Geben Sie der Erde etwas Ton oder Tongranulat hinzu um sie etwas zu lockern und um dafuer zu sorgen, dass der Basilikum keine Staunaesse bekommt.');
+(1, 'Basilikum', 'Ocimum basilicum', 'sonnig, naehrstoffreiche und durchlaessige Boeden, maessig giessen', 'Fruehling, ab Ende Maerz bis April', 'ab Mai', 'Eine olfaktorische Reise in den mediterranen Raum.\r\nDurch die Hinzugabe von Basilikum wird eine einfache Tomatensauce zu einer feinen delikaten Sauce. Bekannt nicht nur fuer den kulinarischen Gebrauch sondern auch fuer seine heilenden Kraefte, wirkt Basilikum u.a. gegen Halserkrankungen und Erkaeltungen. Ein Tipp: Basilikum darf weder zu viel noch zu wenig gegossen werden. Geben Sie der Erde etwas Ton oder Tongranulat hinzu um sie etwas zu lockern und um dafuer zu sorgen, dass der Basilikum keine Staunaesse bekommt.'),
+(2, 'Dill', 'Anethum graveolens', 'sonnig, naehrstoffreiche und durchlaessige Boeden, maessig giessen', 'Fruehling, ab Ende Maerz bis April', 'ab Mai', 'Dill'),
+(3, 'Koriander', 'Coriandrum sativum', 'sonnig, naehrstoffreiche und durchlaessige Boeden, maessig giessen', 'Fruehling, ab Ende Maerz bis April', 'ab Mai', 'Koriander'),
+(4, 'Kresse', 'Lepidium sativum', 'sonnig, naehrstoffreiche und durchlaessige Boeden, maessig giessen', 'Fruehling, ab Ende Maerz bis April', 'ab Mai', 'Kresse'),
+(5, 'Minze', 'Mentha', 'sonnig, naehrstoffreiche und durchlaessige Boeden, maessig giessen', 'Fruehling, ab Ende Maerz bis April', 'ab Mai', 'Minze'),
+(6, 'Petersilie', 'Petroselinum crispum', 'sonnig, naehrstoffreiche und durchlaessige Boeden, maessig giessen', 'Fruehling, ab Ende Maerz bis April', 'ab Mai', 'Petersilie'),
+(7, 'Rosmarin', 'Rosmarinus officinalis', 'sonnig, naehrstoffreiche und durchlaessige Boeden, maessig giessen', 'Fruehling, ab Ende Maerz bis April', 'ab Mai', 'Rosmarin'),
+(8, 'Salbei', 'Salvia', 'sonnig, naehrstoffreiche und durchlaessige Boeden, maessig giessen', 'Fruehling, ab Ende Maerz bis April', 'ab Mai', 'Salbei'),
+(9, 'Schnittlauch', 'Allium schoenoprasmus', 'sonnig, naehrstoffreiche und durchlaessige Boeden, maessig giessen', 'Fruehling, ab Ende Maerz bis April', 'ab Mai', 'Schnittlauch'),
+(10, 'Thymian', 'Thymus', 'sonnig, naehrstoffreiche und durchlaessige Boeden, maessig giessen', 'Fruehling, ab Ende Maerz bis April', 'ab Mai', 'Thymian');
 
 -- --------------------------------------------------------
 
