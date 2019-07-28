@@ -1,3 +1,6 @@
+<?php
+include "includes/assertLogin.php"
+?>
 <!DOCTYPE html>
 <html>
 
@@ -7,8 +10,7 @@
 
 <body>
 <?php
-include("includes/connect.php");
-$name = $_SESSION['name'];
+$name = $_SESSION['vorname'];
 $message = "Willkommen, <b>$name</b>!";
 ?>
 
@@ -20,7 +22,7 @@ include "includes/navigationBar.php";
 ?>
 
 <h1> Login erfolgreich </h1>
-<p style ="text-align:center"><?php echo $message; ?></p>
+<p style="text-align:center"><?php echo $message; ?></p>
 
 <?php
 include "includes/footerbox.php";

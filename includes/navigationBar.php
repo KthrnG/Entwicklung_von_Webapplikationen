@@ -6,6 +6,9 @@
         <a href="profil.php">Profil</a>
         <a href="wunschliste.php">Wunschliste</a>
         ';
+        if (isset($_SESSION['admin']) && $_SESSION['admin']) {
+            echo '<a href="admin.php">Adminbereich</a>';
+        }
     } else {
         echo '
         <a href="registrieren.php">Registrieren</a>

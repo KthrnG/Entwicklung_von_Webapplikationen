@@ -8,8 +8,7 @@ include "includes/assertLogin.php"
 </head>
 <body>
 <?php
-include("includes/connect.php");
-$name = $_SESSION['name'];
+$name = $_SESSION['vorname'];
 ?>
 
 <?php

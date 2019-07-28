@@ -12,9 +12,8 @@ include "includes/assertLogin.php"
 
 <?php
 // Initialize the session
-include("includes/connect.php");
 session_destroy();
-$name = "Gast";
+$_SESSION['loggedin'] = false;
 $message = "Du bist jetzt ausgeloggt. Bis zum nächsten Mal.";
 ?>
 

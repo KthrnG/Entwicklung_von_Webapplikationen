@@ -42,17 +42,14 @@ include "includes/hamburgerMenu.php";
 include "includes/navigationBar.php";
 ?>
 
-<h1> Alle Kräuter
-</h1>
-<div align="center">
-
+<h1> Alle Kräuter</h1>
+<div class="search-result">
     <?php
     include("includes/connect.php");
 
     if (isset($_POST['select'])) {
 
-        $sql = "SELECT medium.mname, medium.link, datei.adr, place.descrp,place2.descrp2, months.month, months2.month2 FROM ((medium INNER JOIN datei ON medium.mname = datei.mname) INNER JOIN ((((placetimes INNER JOIN place ON placetimes.place = place.idp) INNER JOIN place2 ON placetimes.place2 = place2.idp )
-           INNER JOIN months ON placetimes.month = months.idm)INNER JOIN months2 ON placetimes.month2 = months2.idm) ON medium.mname = placetimes.mname)";
+        $sql = "SELECT medium.name, datei.adr, medium.id, medium.beschreibung, medium.erntezeit, medium.standort FROM (medium INNER JOIN datei ON medium.id = datei.medium_id)";
         $result = mysqli_query($conn, $sql);
 
         if (mysqli_num_rows($result) > 0) {
@@ -66,9 +63,9 @@ include "includes/navigationBar.php";
             while ($row = mysqli_fetch_assoc($result)) {
                 echo "<tr>";
                 echo "<td> <img class='image' style='width:70px;' src='" . $row["adr"] . "' /></td><td>
-               <a href ='" . $row["link"] . "'>" . $row["mname"] . "</a>  </td>";
-                echo "<td>" . $row["descrp"] . $row["descrp2"] . "</td>";
-                echo "<td>" . $row["month"] . " " . $row["month2"] . "</td>";
+               <a href ='detail.php?id= " . $row["id"] . "'>" . $row["name"] . "</a>  </td>";
+                echo "<td>" . $row["standort"] . "</td>";
+                echo "<td>" . $row["erntezeit"] . "</td>";
                 echo "</tr>";
                 /*echo "<li>
                 <img class='image' style='width:70px;' src='".$row["adr"]."' />

@@ -19,8 +19,8 @@ if (isset($_POST['save'])) {
         die("Tabelle-Hinzufügen fehlgeschlagen: " . $conn->error);
     } else {
         session_start();
-        $_SESSION['name'] = $_POST['uname'];
-        $name = $_SESSION['name'];
+        $_SESSION['vorname'] = $_POST['uname'];
+        $name = $_SESSION['vorname'];
         $_SESSION['email'] = $_POST['email'];
         $_SESSION['pwd'] = $passwort;
         header("Location:welcome.php");
@@ -28,41 +28,6 @@ if (isset($_POST['save'])) {
     }
 }
 ?>
-<style>
-    form {
-        display: flex;
-        flex-direction: column;
-        width: 300px;
-        margin: 30px;
-        padding: 50px;
-        border: 3px solid #0a632d;
-    }
-
-    textarea {
-        float: left;
-        margin-bottom: 30px;
-        padding: 5px;
-        /*float: right;*/
-    }
-
-    form .statement {
-        display: block;
-        text-align: left;
-        font-size: 16px;
-        font-weight: bold;
-        padding: 30px 0 0 0; /*4.25%;*/
-        margin-bottom: 10px;
-    }
-
-    form button {
-        margin-top: 30px;
-    }
-
-    #el {
-        /*margin-left: 40px;*/
-    }
-
-</style>
 
 <?php
 $page = "registrieren";
@@ -72,30 +37,21 @@ include "includes/navigationBar.php";
 ?>
 
 <h1> Registrieren </h1>
-<div align="center">
+<div class="form_container">
     <form method="post">
-        <div id="el">
-            <label class="statement">Benutzername (max. 20 Zeichen)
-                <input type="text" maxlength="20" name="uname"/>
-            </label>
-            <br>
-        </div>
+        <label>Benutzername (max. 20 Zeichen)
+            <input type="text" maxlength="20" name="uname"/>
+        </label>
 
-        <div id="el">
-            <label class="statement">E-Mail Adresse
-                <input type="email" maxlength="40" name="email"/>
-            </label>
-            <br>
-        </div>
+        <label>E-Mail Adresse
+            <input type="email" maxlength="40" name="email"/>
+        </label>
 
-        <div id="el">
-            <label class="statement">Passwort (max.20 Zeichen)
-                <input type="password" maxlength="20" name="passwort"/>
-            </label>
-        </div>
-        <br>
+        <label>Passwort (max.20 Zeichen)
+            <input type="password" maxlength="20" name="passwort"/>
+        </label>
+
         <button type="submit" name="save">Registrieren</button>
-
     </form>
 </div>
 

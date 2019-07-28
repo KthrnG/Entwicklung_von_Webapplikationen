@@ -101,7 +101,7 @@ h1.ontop{
     font-size: 16px;
     text-align: center;
     padding: 1em 2em;
-    margin: 0px 5px 0px 5px;
+    margin: 0 5px;
     text-decoration: none;
     font-family: sans-serif;
 }
@@ -164,6 +164,7 @@ li.active {
 #el1{
   margin-left: 20px;
 }
+
 #login button {
   border: 3px solid white;
   width: 100px;
@@ -172,8 +173,6 @@ li.active {
   padding: 5px 5px;
   margin: 28px 0px 10px 35px;
 }
-
-
 
 /*
 ---------------------------------
@@ -660,7 +659,7 @@ about.php
 .about table tbody tr td {
     padding: 40px;
     font-family: sans-serif;
-    font-size: 15x;
+    font-size: 15px;
     color: #fff;
     line-height: 20px;
 }
@@ -674,25 +673,61 @@ register.php
 ---------------------------------
 ---------------------------------
  */
-form button {
-    /*float: right;*/
-    display: block;
+.form_container {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    margin: auto;
+    padding: 30px 50px;
+    border: 3px solid #0a632d;
+}
+
+.form_container button {
     background-color: #0a632d;
     color: white;
     font-size: 16px;
     text-align: center;
-    border: none;
     padding: 15px 25px;
-    margin: 0px 5px 0px 5px;
+    /*margin: 0 10px 10px 0;*/
     text-decoration: none;
-    width: 200px;
     border: 3px solid #0a632d;
 }
 
-form button:hover {
+.form_container button:hover {
   background-color: white;
   /*opacity: 0.6;*/
   /*filter: alpha(opacity=60);*/
   color: #0a632d;
   border: 3px solid #0a632d;
+}
+
+#delete_button {
+    background-color: white;
+    color: #F26547;
+    border: 3px solid #F26547;
+}
+
+#delete_button:hover {
+    background-color: #F26547;
+    border: 3px solid #F26547;
+    color: white;
+}
+
+form label {
+    text-align: left;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+
+form input {
+    display: block;
+    margin-bottom: 2em;
+    width: 80%;
+}
+
+.search-result {
+    display: flex;
+    width: 66%;
+    margin: auto;
 }
