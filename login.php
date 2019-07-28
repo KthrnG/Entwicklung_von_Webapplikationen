@@ -62,8 +62,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         font-weight: bold;
         padding: 30px 0 0 0; /*4.25%;*/
         margin-bottom: 10px;
-        /*margin-left: 25%;
-margin-right: 20px;*/
     }
 
     form button {

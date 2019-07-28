@@ -15,7 +15,7 @@ include "includes/navigationBar.php";
 
 <h1> Fehler </h1>
 <div align="center">
-    <p> Ups, hier ist etwas schief gegangen.<br> Bitte melde dich an, um auf dein Profil zugreifen zu können!</p>
+    <p> Ups, hier ist etwas schief gegangen.<br> Bitte melde dich an, um auf diese Seite zugreifen zu können!</p>
 </div>
 
 <?php

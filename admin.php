@@ -1,3 +1,6 @@
+<?php
+include "includes/assertLogin.php"
+?>
 <!DOCTYPE html>
 <html>
 <head>
