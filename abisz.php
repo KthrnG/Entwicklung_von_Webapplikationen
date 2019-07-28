@@ -17,7 +17,7 @@ include "includes/navigationBar.php";
 
 <div class="imgboxes">
     <?php
-    $sql = "SELECT medium.name, datei.adr, medium.id FROM (medium INNER JOIN datei ON medium.id = datei.medium_id)";
+    $sql = "SELECT medium.name, datei.adr, medium.id FROM (medium INNER JOIN datei ON medium.id = datei.medium_id) ORDER BY medium.name";
     $result = mysqli_query($conn, $sql);
     if (mysqli_num_rows($result) < 0) {
         header("Location:error.php");

@@ -49,7 +49,7 @@ include "includes/navigationBar.php";
 
     if (isset($_POST['select'])) {
 
-        $sql = "SELECT medium.name, datei.adr, medium.id, medium.beschreibung, medium.erntezeit, medium.standort FROM (medium INNER JOIN datei ON medium.id = datei.medium_id)";
+        $sql = "SELECT medium.name, datei.adr, medium.id, medium.beschreibung, medium.erntezeit, medium.standort FROM (medium INNER JOIN datei ON medium.id = datei.medium_id) ORDER BY medium.name";
         $result = mysqli_query($conn, $sql);
 
         if (mysqli_num_rows($result) > 0) {
