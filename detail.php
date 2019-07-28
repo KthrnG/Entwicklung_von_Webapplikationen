@@ -33,8 +33,10 @@ if (isset($_GET["id"])) {
 <div class="plantbox">
     <div class="relative">
         <img class="image" src="<?php echo $row["adr"] ?>" alt="<?php echo $row["name"] ?>"/>
-        <?php include "includes/bewertung.php";?>
-        <div class="heart"></div>
+        <?php
+        include "includes/bewertung.php";
+        include "includes/like.php";
+        ?>
     </div>
 
     <div class="descrBox">

@@ -31,8 +31,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
     $rating_res = mysqli_query($conn, $rating_sql);
     if (mysqli_num_rows($rating_res) > 0) {
         $button_disabled = "disabled";
-    } else {
-        $button_disabled = "";
+        $wert = mysqli_fetch_assoc($rating_res)['wert'];
     }
 }
 ?>
@@ -40,14 +39,27 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
     echo '<div class="error_msg">' . $error . '</div>';
 }
 ?>
+<div class="average">
+    &Oslash; <?php echo $average_rating ?>
+</div>
 <div class="thumb">
     <form action="" method="post">
-        <button type="submit" name="like" value="1" <?php echo $button_disabled?>><i class="far fa-thumbs-up"></i></button>
-        <button type="submit" name="like" value="2" <?php echo $button_disabled?>><i class="far fa-thumbs-up"></i></button>
-        <button type="submit" name="like" value="3" <?php echo $button_disabled?>><i class="far fa-thumbs-up"></i></button>
-        <button type="submit" name="like" value="4" <?php echo $button_disabled?>><i class="far fa-thumbs-up"></i></button>
-        <button type="submit" name="like" value="5" <?php echo $button_disabled?>><i class="far fa-thumbs-up"></i></button>
+        <button type="submit" name="like" value="1" <?php echo $button_disabled ?>>
+            <i class="far fa-thumbs-up"></i>
+        </button>
+        <button type="submit" name="like" value="2" <?php echo $button_disabled ?>>
+            <i class="far fa-thumbs-up"></i>
+        </button>
+        <button type="submit" name="like" value="3" <?php echo $button_disabled ?>>
+            <i class="far fa-thumbs-up"></i>
+        </button>
+        <button type="submit" name="like" value="4" <?php echo $button_disabled ?>>
+            <i class="far fa-thumbs-up"></i>
+        </button>
+        <button type="submit" name="like" value="5" <?php echo $button_disabled ?>>
+            <i class="far fa-thumbs-up"></i>
+        </button>
     </form>
 </div>
-&Oslash; <?php echo $average_rating ?>
+
 
