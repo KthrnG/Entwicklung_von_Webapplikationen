@@ -1,13 +1,13 @@
 <?php
 if (isset($_POST["like"])) {
     if (!isset($_SESSION["loggedin"]) || !$_SESSION["loggedin"]) {
-        $error = "Bitte melde dich an, um etwas auf deine Wunschliste zu legen.";
+        $like_error = "Bitte melde dich an, um etwas auf deine Wunschliste zu legen.";
     } else {
         $ins = "INSERT INTO wunschliste (`medium_id`, `user_id`) VALUES (?, ?)";
         $stmt = $conn->prepare($ins);
         $stmt->bind_param("ii", $_GET['id'], $_SESSION['uid']);
         if (!$stmt->execute()) {
-            $error = "Fehler beim Speichern der Bewertung";
+            $like_error = "Fehler beim Speichern der Bewertung";
         }
     }
 }
@@ -22,8 +22,8 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
     }
 }
 ?>
-<?php if (isset($error)) {
-    echo '<div class="error_msg">' . $error . '</div>';
+<?php if (isset($like_error)) {
+    echo '<div class="error_msg">' . $like_error . '</div>';
 }
 ?>
 <div class="heart">

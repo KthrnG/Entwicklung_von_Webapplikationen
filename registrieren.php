@@ -16,10 +16,12 @@ if (isset($_POST['save'])) {
         die("Tabelle-Hinzufügen fehlgeschlagen: " . $conn->error);
     } else {
         session_start();
-        $_SESSION['vorname'] = $_POST['uname'];
-        $name = $_SESSION['vorname'];
+        $_SESSION['vorname'] = $_POST['vorname'];
+        $_SESSION['name'] = $_POST['name'];
         $_SESSION['email'] = $_POST['email'];
         $_SESSION['pwd'] = $_POST['passwort'];
+        $_SESSION['loggedin'] = true;
+        $_SESSION['uid'] = mysqli_insert_id($conn);
         header("Location:welcome.php");
         exit();
     }

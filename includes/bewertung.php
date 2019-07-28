@@ -1,13 +1,13 @@
 <?php
 if (isset($_POST["like"])) {
     if (!isset($_SESSION["loggedin"]) || !$_SESSION["loggedin"]) {
-        $error = "Bitte melde dich an, um eine Bewertung abzugeben.";
+        $rating_error = "Bitte melde dich an, um eine Bewertung abzugeben.";
     } else {
         $ins = "INSERT INTO bewertung (`medium_id`, `user_id`, `wert`) VALUES (?, ?, ?)";
         $stmt = $conn->prepare($ins);
         $stmt->bind_param("iii", $_GET['id'], $_SESSION['uid'], $_POST['like']);
         if (!$stmt->execute()) {
-            $error = "Fehler beim Speichern der Bewertung";
+            $rating_error = "Fehler beim Speichern der Bewertung";
         }
     }
 }
@@ -35,8 +35,8 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
     }
 }
 ?>
-<?php if (isset($error)) {
-    echo '<div class="error_msg">' . $error . '</div>';
+<?php if (isset($rating_error)) {
+    echo '<div class="error_msg">' . $rating_error . '</div>';
 }
 ?>
 <div class="average">
