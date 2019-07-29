@@ -16,8 +16,8 @@ $like_button_disabled = "";
 
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
     $like_sql = "SELECT user_id FROM wunschliste WHERE medium_id = $_GET[id] AND user_id = $_SESSION[uid]";
-    $rating_res = mysqli_query($conn, $like_sql);
-    if (mysqli_num_rows($rating_res) > 0) {
+    $like_res = mysqli_query($conn, $like_sql);
+    if (mysqli_num_rows($like_res) > 0) {
         $like_button_disabled = "disabled";
     }
 }
@@ -28,6 +28,6 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
 ?>
 <div class="heart">
     <form action="" method="post">
-        <button type="submit" name="like" <?php echo $button_disabled ?>><i class="fas fa-heart"></i></i></button>
+        <button type="submit" name="like" <?php echo $like_button_disabled ?>><i class="fas fa-heart"></i></i></button>
     </form>
 </div>
