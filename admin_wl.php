@@ -10,41 +10,39 @@ include "includes/assertLogin.php"
 
 <body>
 
-    <?php
+<?php
 $page = "admin_wl";
 include "includes/headerbox.php";
 include "includes/hamburgerMenu.php";
 include "includes/navigationBar.php";
 ?>
 
-    <h1>Adminbereich</h1>
-    <h2>Alle Wunschlisten</h2>
+<h1>Adminbereich</h1>
+<h2>Alle Wunschlisten</h2>
 
-    
+
 <div class="search-result">
     <?php
 
-    $sql = "SELECT medium.name, datei.adr, medium.id, medium.beschreibung, medium.erntezeit, medium.standort
-            FROM medium 
-            INNER JOIN datei ON medium.id = datei.medium_id
-            JOIN wunschliste ON medium.id = wunschliste.medium_id WHERE wunschliste.user_id = $_SESSION[uid]
-            ORDER BY medium.name";
-    $result = mysqli_query($conn, $sql);
+    $sql_users = "SELECT DISTINCT u.id, u.vorname, u.name FROM users u JOIN wunschliste w on u.id = w.user_id";
+    $result = mysqli_query($conn, $sql_users);
 
     if (mysqli_num_rows($result) > 0) {
         echo "<table>";
         echo "<tr>";
-        echo "<th></th>";
         echo "<th>Name</th>";
-        echo "<th>Standort</th>";
-        echo "<th>Jahreszeit</th>";
+        echo "<th>Wunschliste</th>";
+        echo "<th>Löschen</th>";
         echo "</tr>";
         while ($row = mysqli_fetch_assoc($result)) {
+//            $sql_wl = "SELECT m.name FROM medium m JOIN wunschliste w on m.id = w.medium_id WHERE w.user_id = $row[id]";
+//            $result_wl = mysqli_query($conn, $sql_users);
+//            $row_wl = mysqli_fetch_assoc($result_wl);
+//            echo $row_wl["name"];
             echo "<tr>";
-            echo "<td> <img class='image' style='width:70px;' src='" . $row["adr"] . "' /></td><td>
-               <a href ='detail.php?id= " . $row["id"] . "'>" . $row["name"] . "</a>  </td>";
-            echo "<td>" . $row["standort"] . "</td>";
-            echo "<td>" . $row["erntezeit"] . "</td>";
+            echo "<td>" . $row["vorname"] . " " . $row["name"] . "</td>";
+            echo "<td> <a href ='detail.php?id= " . $row["id"] . "'>" . $row["name"] . "</a>  </td>";
+            echo "<td> <button name='delete' value='" . $row["id"] . "'>X</button> </td>";
             echo "</tr>";
         }
         echo "</table>";
@@ -56,7 +54,7 @@ include "includes/navigationBar.php";
     ?>
 </div>
 
-    <?php
+<?php
 include "includes/footerbox.php";
 ?>
 
