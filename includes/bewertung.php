@@ -30,7 +30,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
     $rating_sql = "SELECT wert FROM bewertung WHERE medium_id = $_GET[id] AND user_id = $_SESSION[uid]";
     $rating_res = mysqli_query($conn, $rating_sql);
     if (mysqli_num_rows($rating_res) > 0) {
-        $rating_button_disabled = "disabled";
+        $already_rated = true;
         $wert = mysqli_fetch_assoc($rating_res)['wert'];
     }
 }
@@ -44,19 +44,19 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
 </div>
 <div class="thumb">
     <form action="" method="post">
-        <button type="submit" name="rating" value="1" <?php echo $rating_button_disabled ?>>
+        <button type="submit" name="rating" value="1">
             <i class="far fa-thumbs-up"></i>
         </button>
-        <button type="submit" name="rating" value="2" <?php echo $rating_button_disabled ?>>
+        <button type="submit" name="rating" value="2">
             <i class="far fa-thumbs-up"></i>
         </button>
-        <button type="submit" name="rating" value="3" <?php echo $rating_button_disabled ?>>
+        <button type="submit" name="rating" value="3">
             <i class="far fa-thumbs-up"></i>
         </button>
-        <button type="submit" name="rating" value="4" <?php echo $rating_button_disabled ?>>
+        <button type="submit" name="rating" value="4">
             <i class="far fa-thumbs-up"></i>
         </button>
-        <button type="submit" name="rating" value="5" <?php echo $rating_button_disabled ?>>
+        <button type="submit" name="rating" value="5">
             <i class="far fa-thumbs-up"></i>
         </button>
     </form>
