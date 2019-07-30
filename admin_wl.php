@@ -11,7 +11,7 @@ include "includes/assertLogin.php"
 <body>
 
     <?php
-$page = "admin";
+$page = "admin_wl";
 include "includes/headerbox.php";
 include "includes/hamburgerMenu.php";
 include "includes/navigationBar.php";
