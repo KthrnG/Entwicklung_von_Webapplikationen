@@ -123,6 +123,14 @@ li.active {
     color: black;
 }
 
+.navbar a.active {
+    background-color: white;
+    opacity: 0.6;
+    filter: alpha(opacity=60);
+    /* For IE8 and earlier */
+    color: black;
+}
+
 .navbar .search-container {
     float: right;
 }

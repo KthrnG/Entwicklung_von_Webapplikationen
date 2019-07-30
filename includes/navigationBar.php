@@ -1,19 +1,15 @@
 <div class="navbar">
     <?php
     if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
-        echo '
-        <a href="logout.php">Logout</a>
-        <a href="profil.php">Profil</a>
-        <a href="wunschliste.php">Wunschliste</a>
-        ';
+        echo '<a href="logout.php"'; if ($page == "logout") echo ' class="active"'; echo '>Logout</a>';
+        echo '<a href="profil.php"'; if ($page == "profil") echo ' class="active"'; echo '>Profil</a>';
+        echo '<a href="wunschliste.php"'; if ($page == "wunschliste") echo ' class="active"'; echo '>Wunschliste</a>        ';
         if (isset($_SESSION['admin']) && $_SESSION['admin']) {
-            echo '<a href="admin.php">Adminbereich</a>';
+            echo '<a href="admin_wl.php"'; if ($page == "admin_wl") echo ' class="active"'; echo '>Wunschlistenadministration</a>';
         }
     } else {
-        echo '
-        <a href="registrieren.php">Registrieren</a>
-        <a href="login.php">Login</a>
-        ';
+        echo '<a href="registrieren.php"'; if ($page == "registrieren") echo ' class="active"'; echo '>Registrieren</a>';
+        echo '<a href="login.php"'; if ($page == "login") echo ' class="active"'; echo '>Login</a>';
     }
     ?>
 </div>
