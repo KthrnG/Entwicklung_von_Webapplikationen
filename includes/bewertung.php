@@ -3,7 +3,7 @@ if (isset($_POST["rating"])) {
     if (!isset($_SESSION["loggedin"]) || !$_SESSION["loggedin"]) {
         $rating_error = "Bitte melde dich an, um eine Bewertung abzugeben.";
     } else {
-        $ins = "INSERT INTO bewertung (`medium_id`, `user_id`, `wert`) VALUES (?, ?, ?)";
+        $ins = "INSERT INTO bewertung (`medium_id`, `user_id`, `wert`) VALUES (?, ?, ?) ON DUPLICATE KEY UPDATE `wert`=VALUES(wert)";
         $stmt = $conn->prepare($ins);
         $stmt->bind_param("iii", $_GET['id'], $_SESSION['uid'], $_POST['rating']);
         if (!$stmt->execute()) {
@@ -23,8 +23,6 @@ if (isset($_GET['id'])) {
         mysqli_free_result($avg_res);
     }
 }
-
-$rating_button_disabled = "";
 
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
     $rating_sql = "SELECT wert FROM bewertung WHERE medium_id = $_GET[id] AND user_id = $_SESSION[uid]";
