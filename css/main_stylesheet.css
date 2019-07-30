@@ -215,7 +215,7 @@ Like Button / zu Favoriten hinzufügen
     color: #FF6699;
 }
 
-.heart button:disabled {
+.heart button.active {
     color: #FF6699;
 }
 
