@@ -218,7 +218,17 @@ Like Button / zu Favoriten hinzufügen
 .heart button.active {
     color: #FF6699;
 }
+/*
+---------------------------------
+---------------------------------
+---------------------------------
+Bewertungs Button / Durchschnitt anzeigen
+---------------------------------
+---------------------------------
+---------------------------------
+*/
 
+/*
 .thumb {
     margin: 0;
     margin-left: -200px;
@@ -239,6 +249,29 @@ Like Button / zu Favoriten hinzufügen
 
 .thumb button:disabled {
     color: grey;
+}
+*/
+.thumb {
+    color: green;
+    font-family: 'Font Awesome 5 Free';
+    font-size: 1.0rem;
+    margin: auto;
+    margin-top: -20px;
+}
+
+.thumb::before {
+    content: '\f164';
+    cursor: pointer;
+}
+
+.thumb:hover::before {
+    content: '\f164';
+    color: lawngreen;
+}
+
+.thumb.rated::before {
+    content: '\f164';
+    font-weight: 900;
 }
 
 /*

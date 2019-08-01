@@ -40,6 +40,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
 <div class="average">
     &Oslash; <?php echo $average_rating ?>
 </div>
+<!-- Buttons verbunden mit DB
 <div class="thumb">
     <form action="" method="post">
         <button type="submit" name="rating" value="1">
@@ -59,5 +60,45 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
         </button>
     </form>
 </div>
+-->
+<div class="thumbs" value="0">
+    <span class="thumb">&nbsp;</span>
+    <span class="thumb">&nbsp;</span>
+    <span class="thumb">&nbsp;</span>
+    <span class="thumb">&nbsp;</span>
+    <span class="thumb">&nbsp;</span>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        addListeners();
+        setRating(); //based on value inside the div
+    });
 
+    function addListeners() {
+        var thumbs = document.querySelectorAll('.thumb');
+        [].forEach.call(thumbs, function(thumb, index) {
+            thumb.addEventListener('click', (function(idx) {
+                console.log('adding rating on', index);
+                document.querySelector('.thumbs').setAttribute('value', idx + 1);
+                console.log('Rating is now', idx + 1);
+                setRating();
+            }).bind(window, index));
+        });
 
+    }
+
+    function setRating() {
+        var thumbs = document.querySelectorAll('.thumb');
+        var rating = parseInt(document.querySelector('.thumbs').getAttribute('value'));
+        [].forEach.call(thumbs, function(thumb, index) {
+            if (rating > index) {
+                thumb.classList.add('rated');
+                console.log('added rated on', index);
+            } else {
+                thumb.classList.remove('rated');
+                console.log('removed rated on', index);
+            }
+        });
+    }
+
+</script>
