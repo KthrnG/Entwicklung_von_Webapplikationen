@@ -10,19 +10,17 @@ include "includes/assertLogin.php"
 
 <body>
 
-<?php
+    <?php
 $page = "admin_wl";
 include "includes/headerbox.php";
 include "includes/hamburgerMenu.php";
 include "includes/navigationBar.php";
 ?>
 
-<h1>Adminbereich</h1>
-<h2>Alle Wunschlisten</h2>
+    <h1>Adminbereich</h1>
 
-
-<div class="search-result">
-    <?php
+    <div class="search-result">
+        <?php
 
     $sql_users = "SELECT DISTINCT u.id, u.vorname, u.name FROM users u JOIN wunschliste w on u.id = w.user_id";
     $result = mysqli_query($conn, $sql_users);
@@ -52,9 +50,9 @@ include "includes/navigationBar.php";
     }
 
     ?>
-</div>
+    </div>
 
-<?php
+    <?php
 include "includes/footerbox.php";
 ?>
 

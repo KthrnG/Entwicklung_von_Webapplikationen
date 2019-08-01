@@ -577,10 +577,10 @@ https://codepen.io/erikterwan/pen/EVzeRP
 
 #menuToggle {
     display: block;
-    position: relative;
+    position: relative;    
     top: 10px;
     margin-left: 50px;
-
+    
     z-index: 1;
 
     -webkit-user-select: none;
@@ -808,7 +808,7 @@ form input {
 
 .search-result {
     display: flex;
-    width: 66%;
+    justify-content: center;
     margin: auto;
 }
 
