@@ -36,7 +36,7 @@ Textboxes Area
             </p>
         </div>
         <div class="box3">
-            <p> Ebenso wichtig erscheint es uns, in ständigem Kontakt mit der Community zu stehen. Teilt euch mit! Gebt eine Bewertung ab, wenn euch etwas gefallen oder beim anlegen eines Kräutergartens geholfen hat und legt euch eure eigene Kräuterwunschliste an, auf die ihr später immer wieder zurückgreifen könnt. Wir hoffen, dass wir als Community genauso wachsen werden, wie unsere Kräutergärten. Viel Spaß beim Durchsuchen!
+            <p> Ebenso wichtig erscheint es uns, in ständigem Kontakt mit der Community zu stehen. Teilt euch mit! Gebt eine Bewertung ab, wenn euch etwas gefallen oder beim anlegen eines Kräutergartens geholfen hat und legt euch eure eigene Kräuterwunschliste an, auf die ihr später immer wieder zurückgreifen könnt. Wir hoffen, dass wir als Community genauso wachsen werden, wie unsere Kräutergärten. Viel Spaß beim Durchstöbern!
         </div>
     </div>
 

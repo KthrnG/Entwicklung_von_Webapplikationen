@@ -294,7 +294,7 @@ Everything for the textboxes
 
 .box1 {
     width: 30%;
-    height: 100%;
+    height: 400px;
     background-color: #4e906c;
     border: green 1px solid;
 
@@ -302,7 +302,7 @@ Everything for the textboxes
 
 .box2 {
     width: 30%;
-    height: 100%;
+    height: 400px;
     background-color: #4e906c;
     border: green 1px solid;
 
@@ -311,7 +311,7 @@ Everything for the textboxes
 
 .box3 {
     width: 30%;
-    height: 100%;
+    height: 400px;
     background-color: #4e906c;
     border: green 1px solid;
 
@@ -324,7 +324,6 @@ Everything for the textboxes
 }
 
 .imgboxes {
-    width: 60%;
     margin: 100px 20%;
     display: flex;
     justify-content: space-between;
