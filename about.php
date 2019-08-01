@@ -22,7 +22,7 @@ include "includes/navigationBar.php";
         <tbody>
         <tr>
             <td>
-                Noosphere ist eine Online-Plattform, die auf einer digitalen Bibliothek basiert,
+                Das Kräuterarchiv ist eine Online-Plattform, die auf einer digitalen Bibliothek basiert,
                 die allgemeine Informationen über die Pflege, die ideale Vegetationszeit und die
                 Behandlung jeder Pflanze liefert. Um den Anbau von Pflanzen auf lokale und nachhaltige
                 Weise zu fördern und zu erleichtern. <br> Ebenso wichtig erscheint es uns, in ständigem Kontakt mit dem
