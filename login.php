@@ -48,12 +48,12 @@ include "includes/navigationBar.php";
 <div class="form_container">
     <form action="" method="post">
         <label>E-Mail
-            <input type="text" name="email" size="40"/>
+            <input type="email" name="email" size="40"/>
         </label>
         <label>Passwort
             <input type="password" name="password" size="40"/>
         </label>
-        <button type="submit" value=" Submit ">
+        <button type="submit" value="submit">
             Login
         </button>
     </form>

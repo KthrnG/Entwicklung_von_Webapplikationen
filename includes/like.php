@@ -34,9 +34,8 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
 ?>
 <div class="heart">
     <form action="" method="post">
-        <button type="submit"
-            <?php if (isset($liked) && $liked) echo 'class="active" name="unlike"'; else echo 'name="like"'; ?>>
-            <i class="fas fa-heart"></i></i>
+        <button type="submit" <?php if (isset($liked) && $liked) echo 'class="active" name="unlike"'; else echo 'name="like"'; ?>>
+            <i class="fas fa-heart"></i>
         </button>
     </form>
 </div>

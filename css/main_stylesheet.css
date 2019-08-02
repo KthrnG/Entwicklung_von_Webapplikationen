@@ -206,9 +206,11 @@ Like Button / zu Favoriten hinzufügen
 
 .heart button {
     font-family: 'Font Awesome 5 Free', sans-serif;
+    font-size: 1.0rem;
     font-weight: 900;
     color: grey;
     border: none;
+    cursor: pointer;
 }
 
 .heart button:hover {
@@ -230,11 +232,12 @@ Bewertungs Button / Durchschnitt anzeigen
 */
 
 .thumb {
-    color: grey;
-    font-family: 'Font Awesome 5 Free';
-    font-size: 1.0rem;
     margin: auto;
     margin-top: -20px;
+    font-family: 'Font Awesome 5 Free';
+    font-size: 1.0rem;
+    color: grey;
+    border: none;
     cursor: pointer;
 }
 

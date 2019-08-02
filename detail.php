@@ -36,6 +36,7 @@ if (isset($_GET["id"])) {
         <?php
         include "includes/bewertung.php";
         include "includes/like.php";
+        include "includes/average.php";
         ?>
     </div>
 
