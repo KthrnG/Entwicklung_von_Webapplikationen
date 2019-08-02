@@ -23,7 +23,7 @@ if (isset($_GET['id'])) {
         mysqli_free_result($avg_res);
     }
 }
-
+$wert=0;
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
     $rating_sql = "SELECT wert FROM bewertung WHERE medium_id = $_GET[id] AND user_id = $_SESSION[uid]";
     $rating_res = mysqli_query($conn, $rating_sql);
@@ -40,28 +40,8 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
 <div class="average">
     &Oslash; <?php echo $average_rating ?>
 </div>
-<!-- Buttons verbunden mit DB
-<div class="thumb">
-    <form action="" method="post">
-        <button type="submit" name="rating" value="1">
-            <i class="far fa-thumbs-up"></i>
-        </button>
-        <button type="submit" name="rating" value="2">
-            <i class="far fa-thumbs-up"></i>
-        </button>
-        <button type="submit" name="rating" value="3">
-            <i class="far fa-thumbs-up"></i>
-        </button>
-        <button type="submit" name="rating" value="4">
-            <i class="far fa-thumbs-up"></i>
-        </button>
-        <button type="submit" name="rating" value="5">
-            <i class="far fa-thumbs-up"></i>
-        </button>
-    </form>
-</div>
--->
-<div class="thumbs" value="0">
+
+<div class="thumbs" value="<?php echo $wert ?>">
     <span class="thumb">&nbsp;</span>
     <span class="thumb">&nbsp;</span>
     <span class="thumb">&nbsp;</span>

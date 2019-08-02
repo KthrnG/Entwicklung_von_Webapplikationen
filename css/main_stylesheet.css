@@ -229,50 +229,26 @@ Bewertungs Button / Durchschnitt anzeigen
 ---------------------------------
 */
 
-/*
 .thumb {
-    margin: 0;
-    margin-left: -200px;
-    margin-top: 15px;
-    padding-left: 225px;
-}
-
-.thumb button {
-    font-family: 'Font Awesome 5 Free', sans-serif;
-    font-weight: 900;
     color: grey;
-    border: none;
-}
-
-.thumb button:hover {
-    color: green;
-}
-
-.thumb button:disabled {
-    color: grey;
-}
-*/
-.thumb {
-    color: green;
     font-family: 'Font Awesome 5 Free';
     font-size: 1.0rem;
     margin: auto;
     margin-top: -20px;
+    cursor: pointer;
 }
 
 .thumb::before {
     content: '\f164';
-    cursor: pointer;
 }
 
-.thumb:hover::before {
-    content: '\f164';
-    color: lawngreen;
+.thumb:hover {
+    color: green;
 }
 
 .thumb.rated::before {
-    content: '\f164';
     font-weight: 900;
+    color: green;
 }
 
 /*
