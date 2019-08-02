@@ -335,6 +335,10 @@ Everything for the textboxes
     width: 150px;
 }
 
+.imgboxes::after {
+    width: 48%;
+    content: "";
+}
 
 .plantbox {
     /*margin-left: 100px;*/
@@ -577,10 +581,10 @@ https://codepen.io/erikterwan/pen/EVzeRP
 
 #menuToggle {
     display: block;
-    position: relative;    
+    position: relative;
     top: 10px;
     margin-left: 50px;
-    
+
     z-index: 1;
 
     -webkit-user-select: none;
