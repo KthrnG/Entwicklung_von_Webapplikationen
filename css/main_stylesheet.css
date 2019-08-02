@@ -741,11 +741,18 @@ impressum.php
  */
 
 .impressum {
-    padding-top: 10px;
-    padding-left: 20%;
-    padding-right: 20%;
+    background: #4e906c;
+    margin-left: 20%;
+    margin-right: 20%;
+    padding: 2%;
     font-family: arial, sans-serif;
-    text-align: left;
+    text-align: justify;
+    color: white;
+}
+
+.impressum p {
+    padding-left: 10%;
+    padding-right: 10%;
 }
 
 /*
