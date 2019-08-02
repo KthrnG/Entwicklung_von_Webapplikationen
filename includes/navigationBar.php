@@ -6,6 +6,7 @@
         echo '<a href="wunschliste.php"'; if ($page == "wunschliste") echo ' class="active"'; echo '>Wunschliste</a>        ';
         if (isset($_SESSION['admin']) && $_SESSION['admin']) {
             echo '<a href="admin_wl.php"'; if ($page == "admin_wl") echo ' class="active"'; echo '>Wunschlistenadministration</a>';
+			echo '<a href="adminNewMedium.php"'; if($page == "adminNewMedium") echo ' class="active"'; echo '>Neues Kraut anpflanzen</a>';
         }
     } else {
         echo '<a href="registrieren.php"'; if ($page == "registrieren") echo ' class="active"'; echo '>Registrieren</a>';
