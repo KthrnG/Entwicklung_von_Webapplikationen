@@ -109,7 +109,23 @@ h1.ontop {
     margin: 0 5px;
     text-decoration: none;
     font-family: sans-serif;
+    border:2px solid #0a632d;
 }
+#admin{
+  float: right;
+  /*display: block;*/
+  background-color: #F26547;
+
+  color:white ;
+  font-size: 16px;
+  text-align: center;
+  padding: 1em 2em;
+  margin: 0 5px;
+  text-decoration: none;
+  font-family: sans-serif;
+  border: 2px solid #F26547;
+}
+
 
 li.active {
     color: #0a632d;
@@ -121,6 +137,13 @@ li.active {
     filter: alpha(opacity=60);
     /* For IE8 and earlier */
     color: black;
+}
+#admin:hover {
+    background-color: #F26547;
+    opacity: 0.6;
+    filter: alpha(opacity=60);
+    /* For IE8 and earlier */
+    color: white;
 }
 
 .navbar a.active {
@@ -186,6 +209,26 @@ li.active {
     padding: 5px 5px;
     margin: 28px 0px 10px 35px;
 }
+
+#basicButton {
+  background-color: #0a632d;
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  padding: 1em 2em;
+  margin: 10px 5px;
+  text-decoration: none;
+  font-family: sans-serif;
+  border: 2px solid #0a632d;
+}
+
+#basicButton:hover {
+  background-color: white;
+  color:#0a632d;
+  border: 2px solid #0a632d;
+}
+
+
 
 /*
 ---------------------------------
@@ -746,7 +789,7 @@ register.php
 .form_container {
     display: flex;
     flex-direction: column;
-    width: 500px;
+    max-width: 500px;
     margin: auto;
     padding: 30px 50px;
     border: 3px solid #0a632d;
@@ -764,6 +807,34 @@ register.php
 }
 
 .form_container button:hover {
+    background-color: white;
+    /*opacity: 0.6;*/
+    /*filter: alpha(opacity=60);*/
+    color: #0a632d;
+    border: 3px solid #0a632d;
+}
+.form_containerSmall {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    margin: auto;
+    padding: 30px 50px;
+    border: 3px solid #0a632d;
+
+}
+
+.form_containerSmall button {
+    background-color: #0a632d;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    padding: 15px 25px;
+    /*margin: 0 10px 10px 0;*/
+    text-decoration: none;
+    border: 3px solid #0a632d;
+}
+
+.form_containerSmall button:hover {
     background-color: white;
     /*opacity: 0.6;*/
     /*filter: alpha(opacity=60);*/
@@ -826,7 +897,22 @@ table td {
     color: white;
 }
 
-.search-result a {
-    text-decoration: none;
-    color: #0a632d;
+
+.searchlink {
+  text-decoration: none;
+  color: #0a632d;
+}
+
+.button {
+  float: right;
+  /*display: block;*/
+  background-color: #0a632d;
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  padding: 1em 2em;
+  margin: 0 5px;
+  text-decoration: none;
+  font-family: sans-serif;
+  border:2px solid #0a632d;
 }

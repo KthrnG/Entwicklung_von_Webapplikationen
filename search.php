@@ -20,7 +20,7 @@ include "includes/navigationBar.php";
 </h1>
 <div align="center">
     <form method="post" action="showall.php">
-        <button type="submit" class="button" name="select">Alle anzeigen</button>
+        <button type="submit" class="button" name="select" id="basicButton" style="margin-right:43%;">Alle anzeigen</button>
     </form>
 </div>
 

@@ -17,7 +17,7 @@ include "includes/hamburgerMenu.php";
 include "includes/navigationBar.php";
 ?>
 
-    <h1>Adminbereich</h1>
+    <h1>Adminbereich Wunschliste</h1>
 
     <div class="search-result">
         <?php
@@ -39,7 +39,7 @@ include "includes/navigationBar.php";
 //            echo $row_wl["name"];
             echo "<tr>";
             echo "<td>" . $row["vorname"] . " " . $row["name"] . "</td>";
-            echo "<td> <a href ='detail.php?id= " . $row["id"] . "'>" . $row["name"] . "</a>  </td>";
+            echo "<td> <a class='searchlink' href ='detail.php?id= " . $row["id"] . "'>" . $row["name"] . "</a>  </td>";
             echo "<td> <button name='delete' value='" . $row["id"] . "'>X</button> </td>";
             echo "</tr>";
         }

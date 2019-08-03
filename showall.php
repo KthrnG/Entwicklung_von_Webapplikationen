@@ -33,7 +33,7 @@ include "includes/navigationBar.php";
             while ($row = mysqli_fetch_assoc($result)) {
                 echo "<tr>";
                 echo "<td> <img class='image' style='width:70px;' src='" . $row["adr"] . "' /></td><td>
-               <a href ='detail.php?id= " . $row["id"] . "'>" . $row["name"] . "</a>  </td>";
+               <a class='searchlink' href ='detail.php?id= " . $row["id"] . "'>" . $row["name"] . "</a>  </td>";
                 echo "<td>" . $row["standort"] . "</td>";
                 echo "<td>" . $row["erntezeit"] . "</td>";
                 echo "</tr>";

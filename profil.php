@@ -21,7 +21,7 @@ include "includes/navigationBar.php";
 ?>
 
 <h1> Profil </h1>
-<div class="form_container">
+<div class="form_containerSmall">
     <p><b> Vorname: </b><?php echo $vorname ?></p>
     <p><b> Nachname: </b><?php echo $name ?></p>
     <p><b> E-Mail: </b><?php echo $email ?> </p>
