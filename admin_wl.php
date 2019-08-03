@@ -48,7 +48,7 @@ if (isset($_POST["delete"])) {
                 $medien = $conn->query($sql_wl);
 
                 echo "<tr>";
-                echo "<td><a class='searchlink' href='detailUser.php?id=" . $user->id . "'>" . $user->vorname . " " . $user->name . "</a></td>";
+                echo "<td><a class='searchlink' href='admin_wl_detail.php?id=" . $user->id . "'>" . $user->vorname . " " . $user->name . "</a></td>";
                 echo "<td>";
                 while ($medium = $medien->fetch_object()) {
                     echo "<a class='searchlink' href ='detail.php?id=" . $medium->id . "'>" . $medium->name . "</a> ";
