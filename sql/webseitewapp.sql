@@ -95,7 +95,7 @@ CREATE TABLE `medium` (
 INSERT INTO `medium` (`id`, `name`, `latein_name`, `standort`, `aussaat`, `erntezeit`, `beschreibung`) VALUES
 (1, 'Basilikum', 'Ocimum basilicum', 'sonnig, naehrstoffreiche und durchlaessige Boeden, maessig giessen', 'Fruehling, ab Ende Maerz bis April', 'ab Mai', 'Eine olfaktorische Reise in den mediterranen Raum.\r\nDurch die Hinzugabe von Basilikum wird eine einfache Tomatensauce zu einer feinen delikaten Sauce. Bekannt nicht nur fuer den kulinarischen Gebrauch sondern auch fuer seine heilenden Kraefte, wirkt Basilikum u.a. gegen Halserkrankungen und Erkaeltungen. Ein Tipp: Basilikum darf weder zu viel noch zu wenig gegossen werden. Geben Sie der Erde etwas Ton oder Tongranulat hinzu um sie etwas zu lockern und um dafuer zu sorgen, dass der Basilikum keine Staunaesse bekommt.'),
 (2, 'Dill', 'Anethum graveolens', 'sonnig, naehrstoffreiche und durchlaessige Boeden, maessig giessen', 'Fruehling, ab Ende Maerz bis April', 'ab Mai', 'Dill'),
-(3, 'Koriander', 'Coriandrum sativum', 'sonnig, naehrstoffreiche und durchlaessige Boeden, maessig giessen', 'Fruehling, ab Ende Maerz bis April', 'ab Mai', 'Koriander'),
+(3, 'Koriander', 'Coriandrum sativum', 'sonnig, naehrstoffreiche und durchlaessige Boeden, maessig giessen', 'Fruehling, ab Ende Maerz bis April', 'ab Mai', 'Koriander gehoert zu der Familie der Doldenbluetler (Apiaceae) und wird sowohl als Gewuerz- als auch als Heilpflanze verwendet. Dabei neben den Blaettern auch die Samen in unterschiedlichsten Bereichen eingesetzt. Sein Aroma empfindet allerdings nicht jeder als angenehm und wird gerne mit dem Geruch von Wanzen verglichen, weshalb sein Einsatz in der Kueche mit Vorsicht zu geniessen ist. Interessant: Seine Verwendung geht weit in die Antike zurueck, sogar im Grab von Tutanchamun (1325 v. Chr.) wurden Koriandersamen gefunden. '),
 (4, 'Kresse', 'Lepidium sativum', 'sonnig, naehrstoffreiche und durchlaessige Boeden, maessig giessen', 'Fruehling, ab Ende Maerz bis April', 'ab Mai', 'Kresse'),
 (5, 'Minze', 'Mentha', 'sonnig, naehrstoffreiche und durchlaessige Boeden, maessig giessen', 'Fruehling, ab Ende Maerz bis April', 'ab Mai', 'Minze'),
 (6, 'Petersilie', 'Petroselinum crispum', 'sonnig, naehrstoffreiche und durchlaessige Boeden, maessig giessen', 'Fruehling, ab Ende Maerz bis April', 'ab Mai', 'Petersilie'),
@@ -107,6 +107,22 @@ INSERT INTO `medium` (`id`, `name`, `latein_name`, `standort`, `aussaat`, `ernte
 -- --------------------------------------------------------
 
 --
+-- Tabellenstruktur für Tabelle `nachrichten`
+--
+
+CREATE TABLE `nachrichten` (
+  `id` int(100) NOT NULL,
+  `to_id` int(100) NOT NULL,
+  `from_id` int(100) NOT NULL,
+  `admin_user` enum('0','1') NOT NULL,
+  `betreff` varchar(255) NOT NULL,
+  `message` text NOT NULL,
+  `opened` enum('0','1') NOT NULL,
+  `rec_delete` enum('0','1') NOT NULL,
+  `send_delete` enum('0','1') NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+---- --------------------------------------------------------
 -- Tabellenstruktur für Tabelle `users`
 --
 
