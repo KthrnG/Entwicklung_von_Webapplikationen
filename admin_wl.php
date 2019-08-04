@@ -1,5 +1,6 @@
+<!--Ansicht für den Admin aller Wunschlisten aller Nutzer mit Möglichkeit Wunschlkisten zu löschen-->
 <?php
-include "includes/assertLogin.php"
+include "includes/assertLogin.php"//Einbinden Kontrolle ob eingeloggt
 ?>
 <!DOCTYPE html>
 <html>
@@ -12,12 +13,14 @@ include "includes/assertLogin.php"
 
 <?php
 $page = "admin_wl";
+//Einbinden von sämtlichen "Bausteinen" für den Basic Aufbau der Webseite:Bildbanner, HamburgerMenü und Navigationsleiste
 include "includes/headerbox.php";
 include "includes/hamburgerMenu.php";
 include "includes/navigationBar.php";
 ?>
 
 <?php
+//Löschen der Wunschliste von einem Nutzer aus der Datenbank
 if (isset($_POST["delete"])) {
     $del = "DELETE FROM wunschliste WHERE user_id=$_POST[delete]";
     $stmt = $conn->prepare($del);
@@ -32,7 +35,7 @@ if (isset($_POST["delete"])) {
 <div class="search-result">
     <form action="" method="post">
         <?php
-
+        //Alle Wunschlisten werden aus der Datenbank abgerufen mit Nutzer
         $sql_users = "SELECT DISTINCT u.id, u.vorname, u.name FROM users u JOIN wunschliste w on u.id = w.user_id";
         $users = $conn->query($sql_users);
 
@@ -44,6 +47,7 @@ if (isset($_POST["delete"])) {
             echo "<th>Löschen</th>";
             echo "</tr>";
             while ($user = $users->fetch_object()) {
+              //Medien der Wunschliste werden namentlich angezeigt
                 $sql_wl = "SELECT m.id, m.name FROM medium m JOIN wunschliste w on m.id = w.medium_id WHERE w.user_id = $user->id";
                 $medien = $conn->query($sql_wl);
 
@@ -58,7 +62,7 @@ if (isset($_POST["delete"])) {
                 echo "</tr>";
             }
             echo "</table>";
-        } else {//keine Medien
+        } else {//keine WUnschlisten
             echo "0 results";
         }
         ?>
@@ -66,7 +70,7 @@ if (isset($_POST["delete"])) {
 </div>
 
 <?php
-include "includes/footerbox.php";
+include "includes/footerbox.php";//Einbinden Footer
 ?>
 
 </body>

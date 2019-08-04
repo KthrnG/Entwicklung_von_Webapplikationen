@@ -1,3 +1,4 @@
+<!--Seite auf der der Admin die Wunschliste eines Nutzers sehen kann-->
 <?php
 include "includes/assertLogin.php"
 ?>
@@ -10,6 +11,7 @@ include "includes/assertLogin.php"
 
 <?php
 $page = "wunschlisteAdmin";
+//Einbinden von sämtlichen "Bausteinen" für den Basic aufbau der Webseite:Bildbanner, HamburgerMenü und Navigationsleiste
 include "includes/headerbox.php";
 include "includes/hamburgerMenu.php";
 include "includes/navigationBar.php";
@@ -19,6 +21,7 @@ include "includes/navigationBar.php";
 <div class="search-result">
     <?php
     if (isset($_GET["id"])) {
+      //Abruf mit dem alle Medien, die sich auf der Wunschliste des abgefragten Nutzers befinden, Darstellung in Tabellenform
         $sql = "SELECT medium.name, datei.adr, medium.id, medium.beschreibung, medium.erntezeit, medium.standort
             FROM medium
             INNER JOIN datei ON medium.id = datei.medium_id
@@ -54,7 +57,7 @@ include "includes/navigationBar.php";
 </div>
 
 <?php
-include "includes/footerbox.php";
+include "includes/footerbox.php";//Einbinden Footer
 ?>
 
 </body>

@@ -1,9 +1,10 @@
+<!--Seite auf der alle Details von einem Medium aus der Datenbank angezeigt werden-->
 <!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="utf-8" content="width=device-width">
-    <title>Basilikum</title>
+    <title></title>
     <link rel="stylesheet" href="css/main_stylesheet.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
 </head>
@@ -11,6 +12,7 @@
 <body>
 <?php
 $page = "detail";
+//Einbinden von sämtlichen "Bausteinen" für den Basic aufbau der Webseite:Bildbanner, HamburgerMenü und Navigationsleiste
 include "includes/connect.php";
 include "includes/headerbox.php";
 include "includes/hamburgerMenu.php";
@@ -19,6 +21,7 @@ include "includes/navigationBar.php";
 
 <?php
 if (isset($_GET["id"])) {
+    //Datenbankabfrage aller Informationen von einem Medium
     $sql = "SELECT medium.name, datei.adr, medium.id, medium.beschreibung, medium.erntezeit, medium.standort, medium.latein_name, medium.aussaat FROM (medium INNER JOIN datei ON medium.id = datei.medium_id) WHERE medium.id = $_GET[id]";
     $result = mysqli_query($conn, $sql);
     if (mysqli_num_rows($result) != 1) {
@@ -34,6 +37,7 @@ if (isset($_GET["id"])) {
     <div class="relative">
         <img class="image" src="<?php echo $row["adr"] ?>" alt="<?php echo $row["name"] ?>"/>
         <?php
+        //Einbinden zur Bewertung, durchschnittliche Bewertung und Wunschlistenbutton
         include "includes/bewertung.php";
         include "includes/like.php";
         include "includes/average.php";
@@ -78,7 +82,7 @@ if (isset($_GET["id"])) {
 </div>
 
 <?php
-include "includes/footerbox.php";
+include "includes/footerbox.php";//Einbinden Footer
 ?>
 
 </body>

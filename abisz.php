@@ -1,3 +1,4 @@
+<!--Seite zur Anzeige aller vorhanden Kräuter-->
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,6 +7,7 @@
 <body>
 
 <?php
+//Einbinden von sämtlichen "Bausteinen" für den Basic aufbau der Webseite:Bildbanner, HamburgerMenü und Navigationsleiste
 $page = "abisz";
 include "includes/connect.php";
 include "includes/headerbox.php";
@@ -17,6 +19,7 @@ include "includes/navigationBar.php";
 
 <div class="imgboxes">
     <?php
+    //Datenbankabruf von allen Medien mit Name und Bild
     $sql = "SELECT medium.name, datei.adr, medium.id FROM (medium INNER JOIN datei ON medium.id = datei.medium_id) ORDER BY medium.name";
     $result = mysqli_query($conn, $sql);
     if (mysqli_num_rows($result) < 0) {
@@ -24,6 +27,7 @@ include "includes/navigationBar.php";
         exit();
     }
     while ($row = mysqli_fetch_assoc($result)) {
+      //Alle Ergebnisse werden als Bild mit Titel dargestellt
         echo '
         <div class="overlay-image">
             <a href="' . "detail.php?id=" . $row["id"] . '">
@@ -40,7 +44,7 @@ include "includes/navigationBar.php";
 </div>
 
 <?php
-include "includes/footerbox.php";
+include "includes/footerbox.php";//Einbinden des Footers
 ?>
 
 </body>

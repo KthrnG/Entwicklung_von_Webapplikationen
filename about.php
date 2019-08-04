@@ -1,3 +1,4 @@
+<!--Seite mit Informationen zur Idee hinter der Webseite-->
 <!DOCTYPE html>
 <html>
 
@@ -9,6 +10,7 @@
 
 <?php
 $page = "about";
+//Einbinden von sämtlichen "Bausteinen" für den Basic aufbau der Webseite:Bildbanner, HamburgerMenü und Navigationsleiste
 include "includes/connect.php";
 include "includes/headerbox.php";
 include "includes/hamburgerMenu.php";
@@ -36,7 +38,7 @@ include "includes/navigationBar.php";
 </div>
 
 <?php
-include "includes/footerbox.php";
+include "includes/footerbox.php";//Einbinden des Footers
 ?>
 
 </body>

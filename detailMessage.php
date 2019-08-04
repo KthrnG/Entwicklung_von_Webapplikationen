@@ -1,5 +1,6 @@
+<!--Seite auf der eine Nachricht für den Admin angezeigt wird-->
 <?php
-include "includes/assertLogin.php"
+include "includes/assertLogin.php"//Einbinden Kontrolle Einloggen
 ?>
 <!DOCTYPE html>
 <html>
@@ -10,6 +11,7 @@ include "includes/assertLogin.php"
 
 <?php
 $page = "detailMessage";
+//Einbinden von sämtlichen "Bausteinen" für den Basic aufbau der Webseite:Bildbanner, HamburgerMenü und Navigationsleiste
 include "includes/headerbox.php";
 include "includes/hamburgerMenu.php";
 include "includes/navigationBar.php";
@@ -17,6 +19,7 @@ include "includes/navigationBar.php";
 
 <?php
 if (isset($_GET["id"])) {
+  //Datenbankabfrage der Nachricht
     $sql = "SELECT id, from_id , betreff, message FROM nachrichten WHERE nachrichten.id = $_GET[id]";
     $result = mysqli_query($conn, $sql);
     if (mysqli_num_rows($result) != 1) {
@@ -29,6 +32,7 @@ if (isset($_GET["id"])) {
 }
 
 ?>
+<!--Anzeige der Nachricht-->
 <h1>Nachricht von  <?php echo $row["from_id"] ?> </h1>
 <div class="form_containerSmall" >
     <p><b> Betreff: </b><?php echo $row["betreff"] ?></p>
@@ -36,7 +40,7 @@ if (isset($_GET["id"])) {
 </div>
 
 <?php
-include "includes/footerbox.php";
+include "includes/footerbox.php";//Einbindne Footer
 ?>
 
 </body>

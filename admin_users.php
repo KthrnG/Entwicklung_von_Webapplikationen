@@ -1,5 +1,6 @@
+<!--Nutzerverwaltung für den Admin, hier werden für den Admin alle registrierte Nutzer angezeigt-->
 <?php
-include "includes/assertLogin.php"
+include "includes/assertLogin.php"//Kontrolle ob der Nutzer eingeloggt ist
 ?>
 <!DOCTYPE html>
 <html>
@@ -10,6 +11,7 @@ include "includes/assertLogin.php"
 
 <?php
 $page = "admin";
+//Einbinden von sämtlichen "Bausteinen" für den Basic aufbau der Webseite:Bildbanner, HamburgerMenü und Navigationsleiste
 include "includes/headerbox.php";
 include "includes/hamburgerMenu.php";
 include "includes/navigationBar.php";
@@ -18,6 +20,7 @@ include "includes/navigationBar.php";
 <h1> Adminbereich Nutzer </h1>
 <div class="search-result" >
 <?php
+//Alle Nutzer werden aus der Datenbank abgerufen und in Tabellenform dargestellt
 $sql = "SELECT id,name, vorname FROM users ORDER BY name";
 $result = mysqli_query($conn, $sql);
 
@@ -40,7 +43,7 @@ if (mysqli_num_rows($result) > 0) {
   ?>
 </div>
 <?php
-include "includes/footerbox.php";
+include "includes/footerbox.php";//Einbinden Footer
 ?>
 
 </body>
