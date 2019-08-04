@@ -98,6 +98,7 @@ h1.ontop {
     margin-top: -30px;
 }
 
+/*Stylt Links in der Navigationsbar wie Buttons*/
 .navbar a {
     float: right;
     /*display: block;*/
@@ -111,6 +112,8 @@ h1.ontop {
     font-family: sans-serif;
     border:2px solid #0a632d;
 }
+
+/*Admin Button in Rot*/
 #admin{
   float: right;
   /*display: block;*/
@@ -131,6 +134,7 @@ li.active {
     color: #0a632d;
 }
 
+/* Bei Mouseover farbliches Feedback*/
 .navbar a:hover {
     background-color: white;
     opacity: 0.6;
@@ -146,6 +150,7 @@ li.active {
     color: white;
 }
 
+/*Wenn der Nutzer sich auf der Seite befindet, farbliche Indikation*/
 .navbar a.active {
     background-color: white;
     opacity: 0.6;
@@ -210,6 +215,7 @@ li.active {
     margin: 28px 0px 10px 35px;
 }
 
+/*Style für alle Buttons auf der Webseite*/
 #basicButton {
   background-color: #0a632d;
   color: white;
@@ -302,11 +308,12 @@ Bewertungs Button / Durchschnitt anzeigen
 ---------------------------------
 ---------------------------------
 Everything for the textboxes
+
 ---------------------------------
 ---------------------------------
 ---------------------------------
 */
-/*container box, invisible*/
+/*Container, unsichtbar, nur zum Layout*/
 .textboxes {
     width: 85%;
     margin: 60px 100px;
@@ -345,6 +352,7 @@ Everything for the textboxes
     text-align: left;
 }
 
+/*Für Bilder*/
 .imgboxes {
     margin: 100px 20%;
     display: flex;
@@ -362,9 +370,8 @@ Everything for the textboxes
     content: "";
 }
 
+/*Layout für die Kräuterdetailseiten*/
 .plantbox {
-    /*margin-left: 100px;*/
-
     margin-left: 15%;
     margin-top: 100px;
     width: 80%;
@@ -444,7 +451,8 @@ Everything for the textboxes
     text-align: left;
 }
 
-/* Main container */
+
+/* Für Bilder mit Text darüber */
 .overlay-image {
     position: relative;
     width: 150px;
@@ -490,6 +498,7 @@ Everything for the textboxes
 }
 
 
+/*Footer*/
 .footerbox {
     width: 30%;
     margin: 40px 100px 0px 100px;
@@ -786,6 +795,8 @@ register.php
 ---------------------------------
 ---------------------------------
  */
+
+ /*Container für alle eingabe Formen*/
 .form_container {
     display: flex;
     flex-direction: column;
@@ -813,6 +824,8 @@ register.php
     color: #0a632d;
     border: 3px solid #0a632d;
 }
+
+/*Container für schmaleren Inhalten*/
 .form_containerSmall {
     display: flex;
     flex-direction: column;
@@ -854,6 +867,7 @@ register.php
     color: white;
 }
 
+/*Label für Eingabemaske*/
 form label {
     text-align: left;
     font-size: 16px;
@@ -867,6 +881,7 @@ form input {
     width: 80%;
 }
 
+/*Layout für jegliche Suchergebnisse aus der Datenbank, die in Tabellenform angezeigt werden*/
 .search-result {
     display: flex;
     justify-content: center;
@@ -903,6 +918,7 @@ table td {
   color: #0a632d;
 }
 
+/*Klasse Button zum Stylen von Links*/
 .button {
   float: right;
   /*display: block;*/
