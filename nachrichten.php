@@ -1,8 +1,9 @@
 <!--Seite auf der Nachrichten an Admin verfasst werden können-->
 <?php
 
-//Ueberpruefung bzgl. Login-Status
-include "includes/assertLogin.php"
+//Ueberpruefung bzgl. Login-Status. $email speichert die Mail-Adresse des eingeloggten Nutzers
+include "includes/assertLogin.php";
+$email = $_SESSION['email'];
 ?>
 <!DOCTYPE html>
 <html>
@@ -38,26 +39,6 @@ include "includes/navigationBar.php";
             <input type="text" maxlength="1000" name="message"/>
         </label>
 
-		<label>Von:
-            <input type="text" maxlength="255" name="von"/>
-        </label>
-
-        <label>Ad
-            <input type="text" maxlength="255" name="au"/>
-        </label>
-
-        <label>open
-            <input type="text" maxlength="1000" name="open"/>
-        </label>
-
-		<label>del
-            <input type="text" maxlength="1000" name="rd"/>
-        </label>
-
-		<label>dele
-            <input type="text" maxlength="1000" name="sd"/>
-        </label>
-
         <button type="submit" name="send">Abschicken!</button>
 	</form>
 </div>
@@ -65,15 +46,18 @@ include "includes/navigationBar.php";
 
 <?php
 
-
-
 if (isset($_POST['send'])) {
-  //Einfügen der Nachricht in die Datenbank
-    $sql = "INSERT INTO nachrichten(`to_id`,`from_id`,`admin_user`,`betreff`,`message`,`opened`,`rec_delete`, `send_delete`) VALUES (?,?,?,?,?,?,?,?)";
+    //Einfügen der Nachricht in die Datenbank
+    $sql = "INSERT INTO nachrichten(`to_id`,`from_id`,`admin_user`,`betreff`,`message`,`opened`) VALUES (?,?,?,?,?,?)";
     $stmt = $conn->prepare($sql);
-	$stmt->bind_param("ssssssss", $toid, $_POST['von'], $_POST['au'], $_POST['subject'], $_POST['message'], $_POST['open'], $_POST['rd'], $_POST['sd']);
-
+	$stmt->bind_param("ssssss", $toid, $email, $admin_user, $_POST['subject'], $_POST['message'], $status);
+	
+    //ID 1 steht für Admins, 0 für Nutzer
 	$toid = 1;
+	$admin_user = 0;
+	
+	//Status markiert, ob die Nachricht bereits vom Admin geöffnet wurde. 0 = Nein
+	$status = 0;
 
 	if (!$stmt->execute()) {
         die("Nachricht senden fehlgeschlagen: " . $conn->error);
@@ -81,14 +65,12 @@ if (isset($_POST['send'])) {
         session_start();
 
         $_SESSION['id'] = mysqli_insert_id($conn);
-		$_SESSION['to_id'] = $toid;
-		$_SESSION['from_id'] = $_POST['von'];
-		$_SESSION['admin_user'] = $_POST['au'];
+		$_SESSION['to_id'] = $toid;		
+		$_SESSION['from_id'] = $email;		
+		$_SESSION['admin_user'] = $admin_user;		
 		$_SESSION['betreff'] = $_POST['subject'];
-		$_SESSION['message'] = $_POST['message'];
-		$_SESSION['opened'] = $_POST['open'];
-		$_SESSION['rec_delete'] = $_POST['rd'];
-		$_SESSION['send_delete'] = $_POST['sd'];
+		$_SESSION['message'] = $_POST['message'];	
+		$_SESSION['opened'] = $status;
 
         header("Location:nachrichtGesendet.php");//Bei Erfolg Weiterleitung
  		exit();
