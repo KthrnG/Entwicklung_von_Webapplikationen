@@ -1,5 +1,6 @@
 <?php
 //Diese Seite in jedem php Dokument referenzieren mit include ("includes/connect.php");
+//Verbindung zur Datenbank
 session_start();
 $servername = "localhost";
 $username = "root";//hier benutzernamen eintragen

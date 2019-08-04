@@ -24,7 +24,7 @@ include "includes/navigationBar.php";
     <?php
 
     $sql = "SELECT medium.name, datei.adr, medium.id, medium.beschreibung, medium.erntezeit, medium.standort
-            FROM medium 
+            FROM medium
             INNER JOIN datei ON medium.id = datei.medium_id
             JOIN wunschliste ON medium.id = wunschliste.medium_id WHERE wunschliste.user_id = $_SESSION[uid]
             ORDER BY medium.name";
@@ -49,7 +49,7 @@ include "includes/navigationBar.php";
         echo "</table>";
         mysqli_free_result($result);
     } else {//keine Medien
-        echo "0 results";
+        echo "Keine Kräuter auf der Wunschliste";
     }
 
     ?>

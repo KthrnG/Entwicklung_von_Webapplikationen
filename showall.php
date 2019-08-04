@@ -63,7 +63,7 @@ include "includes/navigationBar.php";
 
                     */
         else {//keine Medien
-            echo "0 results";
+            echo "Keine Kräuter gefunden";
         }
         //echo "The select function is called.";
         //exit;

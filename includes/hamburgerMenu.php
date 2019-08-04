@@ -1,6 +1,7 @@
+<!--Hamburger Menü zur Navigation-->
 <nav role="navigation">
     <div id="menuToggle">
-        <!--click reciever-->
+        <!--Checkbox, um Click aufzunehmen, nach Click Veränderung-->
         <input type="checkbox"/>
 
         <!--hamburger form-->
@@ -8,7 +9,7 @@
         <span></span>
         <span></span>
 
-        <!--menu points inside the foldout menu-->
+        <!--Im ausgeklappten Menü vorhandenen Navigationspunkte. Wenn man sich auf der aktuellen Seite befindet, wird der Punkt als active gesetzt und damit das Aussehen verändert-->
         <ul id="menu">
             <a href="index.php">
                 <li <?php if ($page == "index") echo "class='active'"; ?> >

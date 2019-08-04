@@ -18,7 +18,7 @@ include "includes/navigationBar.php";
 ?>
 
 <?php
-/**
+/*
 if (isset($_POST["delete"])) {
     $del = "DELETE FROM wunschliste WHERE user_id=$_POST[delete]";
     $stmt = $conn->prepare($del);
@@ -49,7 +49,7 @@ if (mysqli_num_rows($result) > 0) {
 			echo "</tr>"; }
 
 	}
-  
+
   echo "</table>";
   mysqli_free_result($result);
 } else {//keine Nachricht

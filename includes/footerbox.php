@@ -1,4 +1,5 @@
 <footer>
+  <!-- Footer am Ende der Seite mit Copyright und Navigation-->
     <div class="footerbox">
         <a href="index.php">
             <li <?php if ($page == "index") echo "class='active'"; ?> >

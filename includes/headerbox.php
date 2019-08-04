@@ -1,3 +1,4 @@
+<!--Bildbanner mit Webseitentitel-->
 <div class="background">
     <a href="index.php">
         <div class="transbox">

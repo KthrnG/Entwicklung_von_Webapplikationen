@@ -22,11 +22,12 @@ include "includes/navigationBar.php";
         <button type="submit" name="suche">Suchen</button>
     </form>
 </div>
+<br>
 
 <?php
 if (isset($_POST["suche"])) {
-    $suche_sql = "SELECT DISTINCT * FROM medium 
-                  INNER JOIN datei ON medium.id = datei.medium_id 
+    $suche_sql = "SELECT DISTINCT * FROM medium
+                  INNER JOIN datei ON medium.id = datei.medium_id
                   WHERE medium.name LIKE '%$_POST[suchbegriff]%'
                   OR medium.latein_name LIKE '%$_POST[suchbegriff]%'
                   OR medium.standort LIKE '%$_POST[suchbegriff]%'
@@ -53,7 +54,7 @@ if (isset($_POST["suche"])) {
         echo "</table>";
         echo "</div>";
     } else {//keine Medien
-        echo "0 results";
+        echo "<div align='center'>Keine Ergebnisse gefunden</div>";
     }
 }
 ?>
