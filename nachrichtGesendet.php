@@ -1,5 +1,6 @@
+<!--Seite zur Information, dass Nachricht erfolgreich gesendet wurde-->
 <?php
-include "includes/assertLogin.php"
+include "includes/assertLogin.php"//Einbindung Kontrolle Eingeloggt
 ?>
 <!DOCTYPE html>
 <html>
@@ -12,6 +13,7 @@ include "includes/assertLogin.php"
 
 <?php
 $page = "nachrichtGesendet";
+//Einbinden von sämtlichen "Bausteinen" für den Basic Aufbau der Webseite:Bildbanner, HamburgerMenü und Navigationsleiste
 include "includes/headerbox.php";
 include "includes/hamburgerMenu.php";
 include "includes/navigationBar.php";
@@ -21,7 +23,7 @@ include "includes/navigationBar.php";
 
 
 <?php
-include "includes/footerbox.php";
+include "includes/footerbox.php";//Einbindung Footer
 ?>
 
 </body>

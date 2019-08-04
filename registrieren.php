@@ -1,3 +1,4 @@
+<!--Seite auf der ein Nutzer sich neu registrieren kann-->
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,6 +9,7 @@
 include("includes/connect.php");
 $name = 'Gast';
 if (isset($_POST['save'])) {
+  //Einfügen der eingegebnen Daten in die Datenbank um einen neuen Nutzer anzulegen
     $ins = "INSERT INTO users( `vorname`,`name`, `email`, `passwort`) VALUES (?,?,?,?)";
     $stmt = $conn->prepare($ins);
     $stmt->bind_param("ssss", $_POST['vorname'], $_POST['name'], $_POST['email'], $_POST['passwort']);
@@ -16,6 +18,7 @@ if (isset($_POST['save'])) {
         die("Tabelle-Hinzufügen fehlgeschlagen: " . $conn->error);
     } else {
         session_start();
+        //nach Erfolg wird der neue Nutzer direkt eingeloggt und auf die Willkommensseite weitergeleitet
         $_SESSION['vorname'] = $_POST['vorname'];
         $_SESSION['name'] = $_POST['name'];
         $_SESSION['email'] = $_POST['email'];
@@ -30,6 +33,7 @@ if (isset($_POST['save'])) {
 
 <?php
 $page = "registrieren";
+//Einbinden von sämtlichen "Bausteinen" für den Basic Aufbau der Webseite:Bildbanner, HamburgerMenü und Navigationsleiste
 include "includes/headerbox.php";
 include "includes/hamburgerMenu.php";
 include "includes/navigationBar.php";
@@ -38,6 +42,7 @@ include "includes/navigationBar.php";
 <h1> Registrieren </h1>
 <div class="form_container">
     <form method="post">
+      <!--Form zur Eingabe der Registrationsdaten-->
         <label>Vorname
             <input type="text" maxlength="255" name="vorname"/>
         </label>
@@ -55,11 +60,12 @@ include "includes/navigationBar.php";
         </label>
 
         <button type="submit" name="save">Registrieren</button>
+        <!--Button zum Speichern der Eingaben-->
     </form>
 </div>
 
 <?php
-include "includes/footerbox.php";
+include "includes/footerbox.php";//Einbindung Footer
 ?>
 
 </body>

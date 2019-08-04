@@ -1,5 +1,6 @@
+<!--Seite für Admin, auf der ein ausgewähltes Medium editiert oder gelöscht werden kann-->
 <?php
-include "includes/assertLogin.php"
+include "includes/assertLogin.php"//Einbindung Kontrolle Eingeloggt
 ?>
 <!DOCTYPE html>
 <html>
@@ -10,6 +11,7 @@ include "includes/assertLogin.php"
 
 <?php
 $page = "admin";
+//Einbinden von sämtlichen "Bausteinen" für den Basic Aufbau der Webseite:Bildbanner, HamburgerMenü und Navigationsleiste
 include "includes/headerbox.php";
 include "includes/hamburgerMenu.php";
 include "includes/navigationBar.php";
@@ -17,7 +19,7 @@ include "includes/navigationBar.php";
 <?php
 if (isset($_GET["id"])) {
   $mid = $_GET["id"];
-
+//Datenbankabruf aller Informationen eines Mediums
   $sql = "SELECT * FROM medium WHERE id = $_GET[id]";
   $result = mysqli_query($conn, $sql);
   if (mysqli_num_rows($result) != 1) {
@@ -30,6 +32,7 @@ if (isset($_GET["id"])) {
 
 
   if (isset($_POST['delete'])) {
+    //Medium aus der Datenbank löschen
       $sql =
       "DELETE FROM medium WHERE id = $mid;
        /*DELETE FROM wunschliste WHERE medium_id = ;
@@ -37,13 +40,14 @@ if (isset($_GET["id"])) {
        DELETE FROM datei WHERE medium_id = */;";
 
       if ($conn->query($sql) === TRUE) {
-          header("Location:adminMedium.php");
+          header("Location:adminMedium.php");//Weiterleitung bei erfolgreichen Löschen zur Medienübersicht
           exit();
       } else {
           echo "Error deleting record: " . $conn->error;
       }
   }
   if (isset($_POST['save'])) {
+    //geänderte Werte in der Datenbank updaten
       $newname = $_POST['name'];
       $newLname = $_POST['latein_name'];
       $newstandort = $_POST['standort'];
@@ -57,7 +61,7 @@ if (isset($_GET["id"])) {
 
       if ($stmt->execute()) {
 
-          header("Location:adminMedium.php");
+          header("Location:adminMedium.php");//Bei Erfolg weiterleitung auf die Medienübersicht
           exit();
       } else {
           echo "Error updating record: " . $conn->error;
@@ -66,8 +70,10 @@ if (isset($_GET["id"])) {
 
 }
 ?>
+
 <h1> Medium ändern </h1>
 <div class="form_container">
+  <!--Form in der bisherige Daten angezeigt werden und dort umgeändert werden können-->
     <p> Bitte gib die neuen Daten ein </p>
     <form action="" method="post">
         <label>Name
@@ -97,17 +103,19 @@ if (isset($_GET["id"])) {
 
         <button type="submit" name="save">
             Änderungen speichern
+            <!--Button zur Speicherung der Änderungen-->
         </button>
 
         <button type="submit" id="delete_button" name="delete">
             Medium löschen
+            <!--Button zum Löschen des Mediums-->
         </button>
     </form>
 
 </div>
 
 <?php
-include "includes/footerbox.php";
+include "includes/footerbox.php";//Einbinden Footer
 ?>
 
 </body>

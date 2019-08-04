@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+<!--Startseite-->
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -9,6 +10,7 @@
 
     <?php
 $page = "index";
+//Einbinden von sämtlichen "Bausteinen" für den Basic Aufbau der Webseite:Bildbanner, HamburgerMenü und Navigationsleiste
 include "includes/connect.php";
 include "includes/headerbox.php";
 include "includes/hamburgerMenu.php";
@@ -55,10 +57,11 @@ Textboxes Area
             <h1 class="ontop"> Kräuter </h1>
         </div>
     </div>
-
+    <!--Anzeige aller Medien mit Bildern, bei Click Weiterleitungzur Detailseite des Mediums-->
 
     <div class="imgboxes">
         <?php
+        //Abruf aller Medien aus der Datenbank
     $sql = "SELECT medium.name, datei.adr, medium.id FROM (medium INNER JOIN datei ON medium.id = datei.medium_id)";
     $result = mysqli_query($conn, $sql);
     if (mysqli_num_rows($result) < 0) {
@@ -82,7 +85,7 @@ Textboxes Area
     </div>
 
     <?php
-include "includes/footerbox.php";
+include "includes/footerbox.php";//Einbindung Footer
 ?>
 
 </body>

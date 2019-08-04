@@ -1,5 +1,6 @@
+<!--Seite nachdem neues Medium erfolgreich hinzugefügt wurde, Möglichkeit Bild für das Medium hochzuladen-->
 <?php
-include "includes/assertLogin.php"
+include "includes/assertLogin.php"//Einbindung Kontrolle Eingeloggt
 ?>
 <!DOCTYPE html>
 <html>
@@ -18,6 +19,7 @@ $message = "<b>$name</b> wurde angepflanzt!";
 
 <?php
 $page = "mediumAdded";
+//Einbinden von sämtlichen "Bausteinen" für den Basic Aufbau der Webseite:Bildbanner, HamburgerMenü und Navigationsleiste
 include "includes/headerbox.php";
 include "includes/hamburgerMenu.php";
 include "includes/navigationBar.php";
@@ -34,7 +36,7 @@ if (isset($_POST['save'])) {
     $stmt = $conn->prepare($sql);
 
 	//$stmt->bind_param("s",$_POST['adr']);
-	
+
     if (!$stmt->execute()) {
         die("Medium-Hinzufuegen fehlgeschlagen: " . $conn->error);
     } else {
@@ -42,11 +44,11 @@ if (isset($_POST['save'])) {
 		//$_SESSION['adr'] = $_POST['image'];
 		$_SESSION['id'] = mysqli_insert_id($conn);
 		$_SESSION['medium_id'] = mysqli_insert_id($conn);
-				
+
         //header("Location:mediumAdded.php");
  		//exit();
-    
-} 
+
+}
 }
 ?>
 
@@ -60,13 +62,13 @@ if (isset($_POST['save'])) {
         <label>Bild
             <input type="file" name="image"/>
         </label>
-		
+
 		<button type="submit" name="save">Hochladen</button>
 	</form>
 </div>
 
 <?php
-include "includes/footerbox.php";
+include "includes/footerbox.php";//Einbindung Footer
 ?>
 
 </body>

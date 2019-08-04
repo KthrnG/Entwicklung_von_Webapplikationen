@@ -1,5 +1,6 @@
+<!--Wunschliste des Nutzers-->
 <?php
-include "includes/assertLogin.php"
+include "includes/assertLogin.php"//Einbindung Kontrolle Eingeloggt
 ?>
 <!DOCTYPE html>
 <html>
@@ -13,6 +14,7 @@ $name = $_SESSION['vorname'];
 
 <?php
 $page = "wunschliste";
+//Einbinden von sämtlichen "Bausteinen" für den Basic Aufbau der Webseite:Bildbanner, HamburgerMenü und Navigationsleiste
 include "includes/headerbox.php";
 include "includes/hamburgerMenu.php";
 include "includes/navigationBar.php";
@@ -22,7 +24,7 @@ include "includes/navigationBar.php";
 
 <div class="search-result">
     <?php
-
+    //Datenbankabfrage aller Medien, die sich auf der Wunschliste des Nutzers befinden, Darstellung in Tabellenform
     $sql = "SELECT medium.name, datei.adr, medium.id, medium.beschreibung, medium.erntezeit, medium.standort
             FROM medium
             INNER JOIN datei ON medium.id = datei.medium_id
@@ -56,7 +58,7 @@ include "includes/navigationBar.php";
 </div>
 
 <?php
-include "includes/footerbox.php";
+include "includes/footerbox.php";//Einbindung Footer
 ?>
 
 </body>

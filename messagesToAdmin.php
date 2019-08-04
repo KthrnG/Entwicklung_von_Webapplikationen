@@ -1,5 +1,6 @@
+<!--Seite auf der alle Nachrichten an Admin angezeigt werden-->
 <?php
-include "includes/assertLogin.php"
+include "includes/assertLogin.php"//Einbindung Kontrolle eingeloggt
 ?>
 <!DOCTYPE html>
 <html>
@@ -12,6 +13,7 @@ include "includes/assertLogin.php"
 
 <?php
 $page = "messagesToAdmin";
+//Einbinden von sämtlichen "Bausteinen" für den Basic Aufbau der Webseite:Bildbanner, HamburgerMenü und Navigationsleiste
 include "includes/headerbox.php";
 include "includes/hamburgerMenu.php";
 include "includes/navigationBar.php";
@@ -32,6 +34,7 @@ if (isset($_POST["delete"])) {
 
 <div class="search-result" >
 <?php
+//Datenbankabfrage aller Nachrichten
 $sql = "SELECT id,to_id, from_id, betreff FROM nachrichten ORDER BY from_id";
 $result = mysqli_query($conn, $sql);
 
@@ -59,7 +62,7 @@ if (mysqli_num_rows($result) > 0) {
 </div>
 
 <?php
-include "includes/footerbox.php";
+include "includes/footerbox.php";//Einbindung Footer
 ?>
 
 </body>

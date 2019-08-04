@@ -1,3 +1,4 @@
+<!--Seite auf der Nachrichten an Admin verfasst werden können-->
 <?php
 
 //Ueberpruefung bzgl. Login-Status
@@ -16,6 +17,7 @@ include "includes/assertLogin.php"
 <?php
 //Kopf der Seite
 $page = "nachrichten";
+//Einbinden von sämtlichen "Bausteinen" für den Basic Aufbau der Webseite:Bildbanner, HamburgerMenü und Navigationsleiste
 include "includes/headerbox.php";
 include "includes/hamburgerMenu.php";
 include "includes/navigationBar.php";
@@ -27,7 +29,7 @@ include "includes/navigationBar.php";
 
 <div class="form_container">
 	<form method="post">
-
+      <!--Eingabemaske der Nachricht-->
         <label>Betreff
             <input type="text" maxlength="255" name="subject"/>
         </label>
@@ -35,11 +37,11 @@ include "includes/navigationBar.php";
         <label>Nachricht
             <input type="text" maxlength="1000" name="message"/>
         </label>
-		
+
 		<label>Von:
             <input type="text" maxlength="255" name="von"/>
         </label>
-		
+
         <label>Ad
             <input type="text" maxlength="255" name="au"/>
         </label>
@@ -47,15 +49,15 @@ include "includes/navigationBar.php";
         <label>open
             <input type="text" maxlength="1000" name="open"/>
         </label>
-		
+
 		<label>del
             <input type="text" maxlength="1000" name="rd"/>
         </label>
-		
+
 		<label>dele
             <input type="text" maxlength="1000" name="sd"/>
         </label>
-				
+
         <button type="submit" name="send">Abschicken!</button>
 	</form>
 </div>
@@ -63,20 +65,21 @@ include "includes/navigationBar.php";
 
 <?php
 
- 
+
 
 if (isset($_POST['send'])) {
+  //Einfügen der Nachricht in die Datenbank
     $sql = "INSERT INTO nachrichten(`to_id`,`from_id`,`admin_user`,`betreff`,`message`,`opened`,`rec_delete`, `send_delete`) VALUES (?,?,?,?,?,?,?,?)";
     $stmt = $conn->prepare($sql);
 	$stmt->bind_param("ssssssss", $toid, $_POST['von'], $_POST['au'], $_POST['subject'], $_POST['message'], $_POST['open'], $_POST['rd'], $_POST['sd']);
-	
+
 	$toid = 1;
-    
+
 	if (!$stmt->execute()) {
         die("Nachricht senden fehlgeschlagen: " . $conn->error);
     } else {
         session_start();
-		
+
         $_SESSION['id'] = mysqli_insert_id($conn);
 		$_SESSION['to_id'] = $toid;
 		$_SESSION['from_id'] = $_POST['von'];
@@ -86,15 +89,15 @@ if (isset($_POST['send'])) {
 		$_SESSION['opened'] = $_POST['open'];
 		$_SESSION['rec_delete'] = $_POST['rd'];
 		$_SESSION['send_delete'] = $_POST['sd'];
-						
-        header("Location:nachrichtGesendet.php");
+
+        header("Location:nachrichtGesendet.php");//Bei Erfolg Weiterleitung
  		exit();
     }
 }
 ?>
 
 <?php
-include "includes/footerbox.php";
+include "includes/footerbox.php";//Einbindung Footer
 ?>
 
 </body>

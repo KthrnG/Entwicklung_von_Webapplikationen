@@ -1,15 +1,16 @@
+<!--Seite zum Einloggen-->
 <?php
 include("includes/connect.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-// username and password sent from form
+// Email und Passwort werden von der Form genommen und geschaut ob es auf einen Nutzer zutrifft
 
     $myemail = $_POST['email'];
     $mypassword = $_POST['password'];
     $sql = "SELECT id, vorname, name, admin, passwort FROM users WHERE email = '$myemail' AND passwort = '$mypassword'";
     $result = mysqli_query($conn, $sql);
 
-// If result matched $myusername table row must be 1 row
+// Eindeutiges Ergebniss muss vorhanden sein
     if (mysqli_num_rows($result) == 1) {
         $row = mysqli_fetch_assoc($result);
         $_SESSION['uid'] = $row["id"];
@@ -21,10 +22,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['loggedin'] = true;
         $name = $_SESSION['vorname'];
         //$error = "Willkommen " . $name ."<br>";
-        header("Location:welcome.php");
+        header("Location:welcome.php");//Bei Erfolgreichen Einloggen Weiterleitung auf Willkommensseite
         exit();
     } else {
-        $error = "Login fehlgeschlagen";
+        $error = "Login fehlgeschlagen";//Fehlermeldung
     }
 }
 ?>
@@ -39,6 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <?php
 $page = "login";
+//Einbinden von sämtlichen "Bausteinen" für den Basic Aufbau der Webseite:Bildbanner, HamburgerMenü und Navigationsleiste
 include "includes/headerbox.php";
 include "includes/hamburgerMenu.php";
 include "includes/navigationBar.php";
@@ -46,6 +48,7 @@ include "includes/navigationBar.php";
 
 <h1>Login</h1>
 <div class="form_container">
+  <!--Eingabemaske Email und Passwort-->
     <form action="" method="post">
         <label>E-Mail
             <input type="email" name="email" size="40"/>
@@ -55,17 +58,18 @@ include "includes/navigationBar.php";
         </label>
         <button type="submit" value="submit">
             Login
+            <!--Button zum Einloggen-->
         </button>
     </form>
 
     <?php if (isset($error)) {
-        echo '<div style="font-size:11px; color:#cc0000; margin-top:10px">' . $error . '</div>';
+        echo '<div style="font-size:11px; color:#cc0000; margin-top:10px">' . $error . '</div>';//Darstellung Fehlermeldung
     }
     ?>
 </div>
 
 <?php
-include "includes/footerbox.php";
+include "includes/footerbox.php";//Einbindung Footer
 ?>
 
 </body>
