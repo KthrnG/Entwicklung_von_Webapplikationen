@@ -13,8 +13,7 @@ include "includes/assertLogin.php"//Einbindung Kontrolle Eingeloggt
 <?php
 $name = $_SESSION['name'];
 $message = "<b>$name</b> wurde angepflanzt!";
-
-//medien_id = $_SESSION['id'];
+$medium_id = $_SESSION['id'];
 ?>
 
 <?php
@@ -27,26 +26,31 @@ include "includes/navigationBar.php";
 
 <?php
 
-if (isset($_POST['save'])) {
+if (isset($_POST['upload'])) {
 
 	//Zielordner für das Bild
-	$target = "img/" .basename($_FILES['image']['name']);
 	$image = $_FILES['image']['name'];
-    $sql = "INSERT INTO datei(`adr`) VALUES ('$image')";
+	$target = "img/" .basename($image);
+	$type = $_FILES['image']['type'];
+	$data = file_get_contents($_FILES['image']['tmp_name']);
+	
+    $sql = "INSERT INTO datei(`medium_id`,`type`,`adr`,`file`) VALUES (?,?,?,?)";
     $stmt = $conn->prepare($sql);
-
-	//$stmt->bind_param("s",$_POST['adr']);
+	$stmt->bind_param("ssss", $medium_id, $type, $target, $image);
 
     if (!$stmt->execute()) {
         die("Medium-Hinzufuegen fehlgeschlagen: " . $conn->error);
     } else {
-        session_start();
-		//$_SESSION['adr'] = $_POST['image'];
+        //session_start();
+		
 		$_SESSION['id'] = mysqli_insert_id($conn);
-		$_SESSION['medium_id'] = mysqli_insert_id($conn);
-
+		$_SESSION['medium_id'] = $medium_id;
+		$_SESSION['type'] = $type;
+		$_SESSION['adr'] = $target;
+		$_SESSION['file'] = $data;
+		
         //header("Location:mediumAdded.php");
- 		//exit();
+ 		exit();
 
 }
 }
@@ -63,7 +67,7 @@ if (isset($_POST['save'])) {
             <input type="file" name="image"/>
         </label>
 
-		<button type="submit" name="save">Hochladen</button>
+		<button type="submit" name="upload">Hochladen</button>
 	</form>
 </div>
 
