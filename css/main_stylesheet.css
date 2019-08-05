@@ -249,7 +249,7 @@ Like Button / zu Favoriten hinzufügen
 .heart {
     margin: auto;
     padding-left: 225px;
-    margin-top: -20px;
+    margin-top: -25px;
     margin-left: -25px;
 }
 
@@ -282,7 +282,8 @@ Bewertungs Button / Durchschnitt anzeigen
 
 .thumb {
     margin: auto;
-    margin-top: -20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
     font-family: 'Font Awesome 5 Free';
     font-size: 1.0rem;
     color: grey;
@@ -301,6 +302,11 @@ Bewertungs Button / Durchschnitt anzeigen
 .thumb.rated::before {
     font-weight: 900;
     color: green;
+}
+
+
+.average {
+    margin-top: 10px;
 }
 
 /*
