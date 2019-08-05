@@ -34,10 +34,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
     }
 }
 ?>
-<?php if (isset($like_error)) {
-    echo '<div class="error_msg">' . $like_error . '</div>';//Fehlermeldungen werden hier angezeigt
-}
-?>
+
 <div class="heart">
     <form action="" method="post">
       <!--Button mit Herz zum Hinzufügen/Entfernen eines Mediums auf der Wunschliste, wenn es auf der Wunschliste ist, erscheint das Herz rosa, sonst grau-->
@@ -46,3 +43,8 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
         </button>
     </form>
 </div>
+
+<?php if (isset($like_error)) {
+    echo '<div class="error_msg">' . $like_error . '</div>';//Fehlermeldungen werden hier angezeigt
+}
+?>

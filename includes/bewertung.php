@@ -25,10 +25,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
     }
 }
 ?>
-<?php if (isset($rating_error)) {
-    echo '<div class="error_msg">' . $rating_error . '</div>';
-}
-?>
+
 
 <form action="" method="post">
     <!--Eingabeform für die Bewertung in Form von Daumen-->
@@ -38,3 +35,8 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
     <button class="thumb <?php if($wert >= 4) echo 'rated' ?>" name="rating" value=4>&nbsp;</button>
     <button class="thumb <?php if($wert >= 5) echo 'rated' ?>" name="rating" value=5>&nbsp;</button>
 </form>
+
+<?php if (isset($rating_error)) {
+    echo '<div class="error_msg">' . $rating_error . '</div>';
+}
+?>

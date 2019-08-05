@@ -110,23 +110,23 @@ h1.ontop {
     margin: 0 5px;
     text-decoration: none;
     font-family: sans-serif;
-    border:2px solid #0a632d;
+    border: 2px solid #0a632d;
 }
 
 /*Admin Button in Rot*/
-#admin{
-  float: right;
-  /*display: block;*/
-  background-color: #F26547;
+#admin {
+    float: right;
+    /*display: block;*/
+    background-color: #F26547;
 
-  color:white ;
-  font-size: 16px;
-  text-align: center;
-  padding: 1em 2em;
-  margin: 0 5px;
-  text-decoration: none;
-  font-family: sans-serif;
-  border: 2px solid #F26547;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    padding: 1em 2em;
+    margin: 0 5px;
+    text-decoration: none;
+    font-family: sans-serif;
+    border: 2px solid #F26547;
 }
 
 
@@ -142,6 +142,7 @@ li.active {
     /* For IE8 and earlier */
     color: black;
 }
+
 #admin:hover {
     background-color: #F26547;
     opacity: 0.6;
@@ -217,21 +218,21 @@ li.active {
 
 /*Style für alle Buttons auf der Webseite*/
 #basicButton {
-  background-color: #0a632d;
-  color: white;
-  font-size: 16px;
-  text-align: center;
-  padding: 1em 2em;
-  margin: 10px 5px;
-  text-decoration: none;
-  font-family: sans-serif;
-  border: 2px solid #0a632d;
+    background-color: #0a632d;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    padding: 1em 2em;
+    margin: 10px 5px;
+    text-decoration: none;
+    font-family: sans-serif;
+    border: 2px solid #0a632d;
 }
 
 #basicButton:hover {
-  background-color: white;
-  color:#0a632d;
-  border: 2px solid #0a632d;
+    background-color: white;
+    color: #0a632d;
+    border: 2px solid #0a632d;
 }
 
 
@@ -282,7 +283,6 @@ Bewertungs Button / Durchschnitt anzeigen
 
 .thumb {
     margin: auto;
-    margin-top: 5px;
     margin-bottom: 5px;
     font-family: 'Font Awesome 5 Free';
     font-size: 1.0rem;
@@ -304,9 +304,12 @@ Bewertungs Button / Durchschnitt anzeigen
     color: green;
 }
 
-
 .average {
     margin-top: 10px;
+}
+
+.error_msg {
+    font-family: sans-serif;
 }
 
 /*
@@ -418,7 +421,7 @@ Everything for the textboxes
 
 .steckbrief table caption {
     text-align: left;
-    padding: 8px 5px;
+    padding-bottom: 8px;
     color: rgb(0, 0, 0);
     font-weight: bold;
 }
@@ -445,7 +448,6 @@ Everything for the textboxes
 
 .beschreibung table caption {
     text-align: left;
-    padding: 8px 5px;
     color: rgb(0, 0, 0);
     font-weight: bold;
 }
@@ -802,7 +804,7 @@ register.php
 ---------------------------------
  */
 
- /*Container für alle eingabe Formen*/
+/*Container für alle eingabe Formen*/
 .form_container {
     display: flex;
     flex-direction: column;
@@ -920,21 +922,21 @@ table td {
 
 
 .searchlink {
-  text-decoration: none;
-  color: #0a632d;
+    text-decoration: none;
+    color: #0a632d;
 }
 
 /*Klasse Button zum Stylen von Links*/
 .button {
-  float: right;
-  /*display: block;*/
-  background-color: #0a632d;
-  color: white;
-  font-size: 16px;
-  text-align: center;
-  padding: 1em 2em;
-  margin: 0 5px;
-  text-decoration: none;
-  font-family: sans-serif;
-  border:2px solid #0a632d;
+    float: right;
+    /*display: block;*/
+    background-color: #0a632d;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    padding: 1em 2em;
+    margin: 0 5px;
+    text-decoration: none;
+    font-family: sans-serif;
+    border: 2px solid #0a632d;
 }
