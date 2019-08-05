@@ -20,16 +20,14 @@ include "includes/navigationBar.php";
 ?>
 
 <?php
-
+/*
 if (isset($_POST["delete"])) {
-    $del = "DELETE FROM nachrichten WHERE id =$_POST[delete]";
+    $del = "DELETE FROM wunschliste WHERE user_id=$_POST[delete]";
     $stmt = $conn->prepare($del);
     if (!$stmt->execute()) {
-		echo "Nachricht geloescht";
-	} else {
-        $like_error = "Fehler beim Loeschen der Nachricht";
+        $like_error = "Fehler beim Löschen der Wunschliste";
     }
-}
+}*/
 ?>
 
 <h1>Nachrichten an die Administratoren</h1>
@@ -45,17 +43,14 @@ if (mysqli_num_rows($result) > 0) {
   echo "<tr>";
   echo "<th>Absender</th>";
   echo "<th>Betreff</th>";
-  echo "<th>ID</th>";
-  echo "<th>Loeschen</th>";
   echo "</tr>";
 	if($to_id = 1) {
   		while ($row = mysqli_fetch_assoc($result)) {
-			echo "<tr>";
+    		echo "<tr>";
     		echo "<td><a class='searchlink' href ='detailMessage.php?id= " . $row["id"] . "'>" . $row["from_id"] . "</a> </td>";
     		echo "<td><a class='searchlink' href ='detailMessage.php?id= " . $row["id"] . "'>" . $row["betreff"] . "</a> </td>";
-			echo "<td><a class='searchlink' href ='detailMessage.php?id= " . $row["id"] . "'>" . $row["id"] . "</a> </td>";
-			echo "<td> <button name='delete' type='submit'  value='" . $messages->id . "'>X</button> </td>";
-            echo "</tr>"; }
+			echo "</tr>"; }
+
 	}
 
   echo "</table>";

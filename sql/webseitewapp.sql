@@ -53,8 +53,7 @@ CREATE TABLE `datei` (
   `id` int(11) NOT NULL,
   `medium_id` int(11) NOT NULL,
   `type` varchar(30) NOT NULL,
-  `adr` varchar(400) NOT NULL,
-  `file` longblob NOT NULL
+  `adr` varchar(400) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -114,14 +113,18 @@ INSERT INTO `medium` (`id`, `name`, `latein_name`, `standort`, `aussaat`, `ernte
 CREATE TABLE `nachrichten` (
   `id` int(100) NOT NULL,
   `to_id` int(100) NOT NULL,
-  `from_id` varchar(100) NOT NULL,
+  `from_id` int(100) NOT NULL,
   `admin_user` enum('0','1') NOT NULL,
   `betreff` varchar(255) NOT NULL,
   `message` text NOT NULL,
-  `opened` enum('0','1') NOT NULL
+  `opened` enum('0','1') NOT NULL,
+  `rec_delete` enum('0','1') NOT NULL,
+  `send_delete` enum('0','1') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
----- --------------------------------------------------------
+-- --------------------------------------------------------
+
+--
 -- Tabellenstruktur für Tabelle `users`
 --
 
