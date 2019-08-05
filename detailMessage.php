@@ -19,25 +19,47 @@ include "includes/navigationBar.php";
 
 <?php
 if (isset($_GET["id"])) {
-  //Datenbankabfrage der Nachricht
-    $sql = "SELECT id, from_id , betreff, message FROM nachrichten WHERE nachrichten.id = $_GET[id]";
-    $result = mysqli_query($conn, $sql);
-    if (mysqli_num_rows($result) != 1) {
-        header("Location:notfound.php");
-        exit();
-    }
-    $row = mysqli_fetch_assoc($result);
+  $test = $_GET["id"];
+ 
+//Datenbankabruf aller Informationen eines Mediums
+  $sql = "SELECT * FROM nachrichten WHERE id = $_GET[id]";
+  $result = mysqli_query($conn, $sql);
+  if (mysqli_num_rows($result) != 1) {
+      header("Location:notfound.php");
+      exit();
+  }
+  $row = mysqli_fetch_assoc($result);
 
-    mysqli_free_result($result);
+ // mysqli_free_result($result);
+	
+
+if (isset($_POST['delete'])) {
+    //Nachrichten aus der Datenbank löschen
+      $sql ="DELETE FROM nachrichten WHERE id = $test";
+
+      if ($conn->query($sql) === TRUE) {
+          header("Location:messagesToAdmin.php");//Weiterleitung bei erfolgreichen Löschen 
+          exit();
+      } else {
+          echo "Error deleting record: " . $conn->error;
+      }
+  }
 }
 
 ?>
+
+
 <!--Anzeige der Nachricht-->
 <h1>Nachricht von  <?php echo $row["from_id"] ?> </h1>
-<div class="form_containerSmall" >
-    <p><b> Betreff: </b><?php echo $row["betreff"] ?></p>
-    <p><b> Nachricht: </b><?php echo $row["message"] ?></p><br><br>
+<div class="form_container" >
+	<form action="" method="post">
+    <label>Betreff: </label><?php echo $row["betreff"] ?><br><br>
+    <label>Nachricht:</label><?php echo $row["message"] ?><br><br>
+	<button type='submit' id='delete_button' name='delete'>Nachricht löschen</button>
+	</form>
 </div>
+
+
 
 <?php
 include "includes/footerbox.php";//Einbindne Footer
