@@ -49,7 +49,7 @@ if (isset($_POST['upload'])) {
 		$_SESSION['adr'] = $target;
 		$_SESSION['file'] = $data;
 		
-        header("Location:uploaded.php");
+        //header("Location:mediumAdded.php");
  		exit();
 
 }

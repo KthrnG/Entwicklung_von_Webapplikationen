@@ -32,9 +32,12 @@ if (isset($_GET["id"])) {
 
 
   if (isset($_POST['delete'])) {
-     
     //Medium aus der Datenbank löschen
-      $sql = "DELETE FROM medium WHERE id = $mid";
+      $sql =
+      "DELETE FROM medium WHERE id = $mid;
+       /*DELETE FROM wunschliste WHERE medium_id = ;
+       DELETE FROM bewertung WHERE medium_id = ;
+       DELETE FROM datei WHERE medium_id = */;";
 
       if ($conn->query($sql) === TRUE) {
           header("Location:adminMedium.php");//Weiterleitung bei erfolgreichen Löschen zur Medienübersicht

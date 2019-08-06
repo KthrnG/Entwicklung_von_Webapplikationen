@@ -19,6 +19,17 @@ include "includes/hamburgerMenu.php";
 include "includes/navigationBar.php";
 ?>
 
+<?php
+/*
+if (isset($_POST["delete"])) {
+    $del = "DELETE FROM wunschliste WHERE user_id=$_POST[delete]";
+    $stmt = $conn->prepare($del);
+    if (!$stmt->execute()) {
+        $like_error = "Fehler beim Löschen der Wunschliste";
+    }
+}*/
+?>
+
 <h1>Nachrichten an die Administratoren</h1>
 
 <div class="search-result" >
@@ -26,20 +37,20 @@ include "includes/navigationBar.php";
 //Datenbankabfrage aller Nachrichten
 $sql = "SELECT id,to_id, from_id, betreff FROM nachrichten ORDER BY from_id";
 $result = mysqli_query($conn, $sql);
-//Wenn es Nachrichten gibt, also die Anzahl der Zeilen (1 Nachricht = 1 Zeile) wird eine Tabelle erstellt
+
 if (mysqli_num_rows($result) > 0) {
   echo "<table style='min-width: 200px; text-align:center;'>";
   echo "<tr>";
   echo "<th>Absender</th>";
   echo "<th>Betreff</th>";
   echo "</tr>";
-    //Macht vielleicht mehr Sinn, diese Abfrage mit in die erste zu packen
 	if($to_id = 1) {
   		while ($row = mysqli_fetch_assoc($result)) {
-			echo "<tr>";
-    		echo "<td><a class='searchlink' href ='detailUser.php?id= " . $row["id"] . "'>" . $row["from_id"] . "</a> </td>";
+    		echo "<tr>";
+    		echo "<td><a class='searchlink' href ='detailMessage.php?id= " . $row["id"] . "'>" . $row["from_id"] . "</a> </td>";
     		echo "<td><a class='searchlink' href ='detailMessage.php?id= " . $row["id"] . "'>" . $row["betreff"] . "</a> </td>";
-            echo "</tr>"; }
+			echo "</tr>"; }
+
 	}
 
   echo "</table>";
